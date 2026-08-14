@@ -1,0 +1,8 @@
+{
+  "_comment": "Approved price points for the store. No product may be priced off this ladder. tools/pricing.mjs snaps every imported price to the nearest point (ties round UP) at build time.",
+  "currency": "USD",
+  "approvedPricePoints": [
+    29.90, 49.80, 68.70, 79.50, 99.50, 109.00, 169.00,
+    198.00, 248.00, 249.00, 318.00, 395.00, 445.00, 790.00, 890.00
+  ]
+}

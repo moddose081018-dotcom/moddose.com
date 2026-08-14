@@ -1,0 +1,14 @@
+{
+  "name": "moddose-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Moddose — static storefront for moddose.com",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "test": "node --test tools/*.test.mjs",
+    "serve": "node tools/serve.mjs",
+    "check": "npm run test && npm run build"
+  },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 240" width="160" height="240" role="img" aria-label="Energy &amp; Focus Stack — 12 servings">
+  <defs>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity=".22"/>
+      <stop offset=".38" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".78" stop-color="#000" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <ellipse cx="80" cy="230" rx="52" ry="7" fill="#14161A" opacity=".07"/>
+  
+    <g>
+      <path d="M40 26h80a6 6 0 0 1 6 6v186a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6V32a6 6 0 0 1 6-6z" fill="#B23A48"/>
+      <path d="M40 26h80a6 6 0 0 1 6 6v186a6 6 0 0 1-6 6H40a6 6 0 0 1-6-6V32a6 6 0 0 1 6-6z" fill="url(#sheen)"/>
+      <rect x="34" y="26" width="92" height="12" fill="#8C2A36"/>
+      <rect x="34" y="212" width="92" height="12" fill="#8C2A36"/>
+      <rect x="44" y="96" width="72" height="94" rx="9" fill="#F8EAEC"/>
+      <rect x="56" y="108" width="48" height="2.4" rx="1.2" fill="#B23A48" opacity=".3"/>
+      <text x="80" y="124.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="8.5" font-weight="700" letter-spacing=".6" fill="#B23A48">ENERGY &amp;</text>
+      <text x="80" y="135.0" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="8.5" font-weight="700" letter-spacing=".6" fill="#B23A48">FOCUS STACK</text>
+      <text x="80" y="156" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="7" letter-spacing="1.1" fill="#B23A48" opacity=".65">MODDOSE</text>
+      <rect x="62" y="164" width="36" height="1.2" rx=".6" fill="#B23A48" opacity=".25"/>
+      <text x="80" y="179" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,sans-serif" font-size="6.6" letter-spacing=".5" fill="#B23A48" opacity=".7">12 SERVINGS</text>
+    </g>
+</svg>

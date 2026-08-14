@@ -1,0 +1,12 @@
+{
+  "brand": "Moddose",
+  "domain": "moddose.com",
+  "url": "https://moddose.com",
+  "tagline": "Precision-dosed supplements. Every milligram on the label.",
+  "email": "hello@moddose.com",
+  "supportEmail": "support@moddose.com",
+  "freeShippingThreshold": 50,
+  "subscribeDiscount": 0.2,
+  "guaranteeDays": 60,
+  "year": 2026
+}
