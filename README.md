@@ -190,12 +190,41 @@ lines; it is the difference between a supplement and an unapproved new drug.
 
 ## Deployment
 
-GitHub Pages from the default branch, root directory. `CNAME` contains `moddose.com`, and
-`.nojekyll` stops Jekyll from touching the output. Point DNS at GitHub Pages:
+GitHub Actions deploys every push to `main` (`.github/workflows/pages.yml`). Pages is
+configured with **Source: GitHub Actions**, not "deploy from a branch".
+
+**The site must be served from a domain root, not a subpath.** Pages are linked with
+root-relative paths (`/assets/...`, `/shop/`), so
+`moddose081018-dotcom.github.io/moddose.com/` renders unstyled with broken navigation.
+That URL is not a usable preview — use a custom domain, or `npm run serve` locally.
+
+### Current state: staging
+
+`moddose.com` still serves an existing site (A records at 35.213.177.94, Cloudflare
+proxied), so this store is staged on a subdomain:
 
 ```
-A     moddose.com     185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153
-CNAME www             <owner>.github.io
+CNAME  new   moddose081018-dotcom.github.io   DNS only (grey cloud)
 ```
 
-Then enable HTTPS in the repository's Pages settings once the certificate is issued.
+`CNAME` in this repo reads `new.moddose.com` to match the Pages custom-domain setting.
+Note that with the GitHub Actions source, GitHub reads the custom domain from repository
+settings and ignores this file; it is kept in sync so the two never disagree.
+
+### Cutting over to the apex later
+
+1. Replace the `@` and `www` A records (35.213.177.94) with either
+   `CNAME @ -> moddose081018-dotcom.github.io` (Cloudflare flattens apex CNAMEs) or
+   GitHub's four A records: 185.199.108.153, 185.199.109.153, 185.199.110.153,
+   185.199.111.153. Keep them **DNS only** until GitHub has issued the certificate.
+2. Change `CNAME` in this repo to `moddose.com` and update the custom domain in
+   Settings -> Pages.
+3. Tick **Enforce HTTPS** once the certificate is issued.
+4. **Check email afterwards.** The SPF record starts `v=spf1 +a +mx +a:sgp57.siteground.asia`
+   The `+a` mechanism authorises whatever the domain's A record points at, so repointing
+   the apex silently changes what SPF authorises. Mail from the SiteGround host still
+   passes via the explicit `+a:sgp57.siteground.asia`, but send a test message and check
+   the SPF result before assuming it is fine.
+
+A `*.moddose.com` wildcard A record exists and catches any subdomain without an explicit
+record, so a staging subdomain needs its own record rather than relying on the wildcard.
