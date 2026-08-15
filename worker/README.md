@@ -22,17 +22,56 @@ convenient it looks.
 
 ## Deploy
 
+**Run every command from this directory.** Wrangler reads its config from the current
+working directory, so running these anywhere else silently targets whatever Worker that
+directory's config names — including creating a new one. Deploy first, confirm the name in
+the output, and only then set secrets.
+
+macOS / Linux:
+
 ```bash
-cd worker
+cd path/to/moddose.com/worker
 npx wrangler login
 npx wrangler deploy
 ```
 
-Then set the secrets — these are prompted for and never written to a file:
+Windows PowerShell — note that `&&` is not a statement separator there, so chain with `;`
+or use separate lines:
+
+```powershell
+cd path\to\moddose.com\worker
+npx wrangler login
+npx wrangler deploy
+```
+
+The deploy output must say `moddose-checkout` and print a `*.workers.dev` URL. **If it names
+any other Worker, stop** — you are in the wrong directory, and the next command would attach
+your Stripe key to something else.
+
+Then set the secrets. These are prompted for and never written to a file:
 
 ```bash
 npx wrangler secret put STRIPE_SECRET_KEY       # sk_test_... first, sk_live_... later
 npx wrangler secret put STRIPE_WEBHOOK_SECRET   # whsec_... from the webhook endpoint
+```
+
+Verify they landed on the right Worker:
+
+```bash
+npx wrangler secret list
+```
+
+### If a secret went to the wrong Worker
+
+It happens — wrangler will offer to create a Worker that does not exist rather than failing.
+Remove the secret from wherever it landed, and roll the key in the Stripe dashboard if it was
+a live one:
+
+```bash
+npx wrangler secret delete STRIPE_SECRET_KEY --name <wrong-worker>
+npx wrangler secret delete STRIPE_WEBHOOK_SECRET --name <wrong-worker>
+# or, if that Worker was created by accident and has no deployment:
+npx wrangler delete --name <wrong-worker>
 ```
 
 **Never put a secret key in `wrangler.toml`, in the site, or in a chat window.** If one is
@@ -81,8 +120,12 @@ gets billed.
 
 ```bash
 npm test                 # from the repo root, includes the worker's 11 tests
-npx wrangler dev         # local worker at http://localhost:8787
+npx wrangler dev         # local worker at http://localhost:8787, using [vars] above
 ```
+
+For local testing, `wrangler dev` picks up `[vars]` from `wrangler.toml`; override
+`SITE_ORIGIN` for the session with `--var SITE_ORIGIN:http://localhost:4173` rather than
+adding an environment block to the config.
 
 With `wrangler dev` running, point the site at it and rebuild:
 
