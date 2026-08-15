@@ -6,11 +6,15 @@ supplements (Onnit, Neurohacker Collective, Mind Lab Pro, Gorilla Mind, Thrivous
 No framework, no build dependencies, no npm install. Plain HTML/CSS/JS plus a small
 Node build script that generates product pages and enforces the pricing rules.
 
+**New here? Read [HANDOVER.md](HANDOVER.md) first** — it covers the decisions behind this
+codebase, several of which are load-bearing and easy to undo by accident.
+
 ```
-npm run check     # run the pricing tests, then build
+npm run check     # pricing tests, build, then browser checks
 npm run build     # regenerate everything derived from data/
 npm run serve     # preview at http://localhost:4173
 npm test          # pricing rule unit tests
+npm run test:e2e  # browser checks against a real storefront
 ```
 
 ---
