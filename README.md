@@ -134,6 +134,9 @@ Blocking:
    Wire Stripe Checkout, Shopify Buy Buttons or similar: point the drawer's Checkout button
    (`assets/js/store.js`, `renderDrawer`) at the provider's hosted session and remove the
    notice from `checkout/index.html`. Never build a card form into this static site.
+   When the cart contains subscription lines, the session must be created in the provider's
+   recurring mode using the interval from `Cart.interval()` — a subscription checkbox that
+   creates a one-off charge is worse than no checkbox at all.
 2. **Email endpoint.** Signup forms have no `action` and say so on submit
    (`wireForms` in `store.js`). Add `action="<endpoint>" method="post"` and the fallback is
    skipped automatically.
@@ -153,6 +156,29 @@ Worth doing:
   an empty one looks worse than none. Add it once you have verified reviews to show.
 - Analytics, if you want it — the privacy policy currently states there is none, so update
   that page in the same commit.
+
+## Subscriptions
+
+Two places set the plan, and they share one cart:
+
+- **Product page** — a per-line one-time/subscribe radio in the buy box.
+- **Checkout** — a single tick box that switches the whole order to Subscribe & Save and
+  reveals a delivery-interval selector (30/45/60/90 days, stored under
+  `moddose.interval.v1`).
+
+The box reflects cart state rather than owning it: all lines subscribed shows it ticked, a
+mixed cart shows it indeterminate, an empty cart disables it. Unticking converts every line
+back to one-time and merges any lines that collapse together.
+
+Three properties of that checkbox are deliberate and should survive future edits, because
+they are what keeps a recurring charge lawful in the US under ROSCA and the FTC's negative
+option rule (and the equivalents elsewhere):
+
+1. **It is never pre-ticked.** A subscription the customer did not affirmatively choose is
+   the single most enforced dark pattern in e-commerce.
+2. **The recurring terms sit next to the box**, not behind a link: what is charged, how
+   often, when it starts, and how to cancel.
+3. **The summary shows both numbers** — what is charged today and what recurs after it.
 
 ## Claims policy
 

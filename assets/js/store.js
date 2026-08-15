@@ -14,6 +14,9 @@
     currency: 'USD'
   };
 
+  var INTERVAL_KEY = 'moddose.interval.v1';
+  var DEFAULT_INTERVAL = '30';
+
   var CATALOG = window.MODDOSE_CATALOG || [];
   var bySlug = {};
   CATALOG.forEach(function (p) { bySlug[p.slug] = p; });
@@ -121,6 +124,45 @@
 
     remove: function (slug, plan) {
       write(read().filter(function (i) { return !(i.slug === slug && i.plan === plan); }));
+    },
+
+    /** Switch every line to one plan, merging lines that collapse together. */
+    setAllPlans: function (plan) {
+      plan = plan === 'subscribe' ? 'subscribe' : 'onetime';
+      var merged = [];
+      read().forEach(function (i) {
+        var existing = merged.filter(function (m) { return m.slug === i.slug; })[0];
+        if (existing) existing.qty = Math.min(99, existing.qty + i.qty);
+        else merged.push({ slug: i.slug, qty: i.qty, plan: plan });
+      });
+      write(merged);
+    },
+
+    /** 'empty' | 'subscribe' | 'onetime' | 'mixed' */
+    planState: function () {
+      if (state.length === 0) return 'empty';
+      var subs = state.filter(function (i) { return i.plan === 'subscribe'; }).length;
+      if (subs === state.length) return 'subscribe';
+      if (subs === 0) return 'onetime';
+      return 'mixed';
+    },
+
+    /** What the order would save if every line switched to subscription. */
+    subscriptionSaving: function () {
+      return state.reduce(function (sum, i) {
+        var p = bySlug[i.slug];
+        return sum + (p.price - subPrice(p.price)) * i.qty;
+      }, 0);
+    },
+
+    interval: function () {
+      try { return localStorage.getItem(INTERVAL_KEY) || DEFAULT_INTERVAL; }
+      catch (e) { return DEFAULT_INTERVAL; }
+    },
+
+    setInterval: function (days) {
+      try { localStorage.setItem(INTERVAL_KEY, days); } catch (e) { /* private mode */ }
+      emit();
     },
 
     clear: function () { write([]); }
@@ -446,11 +488,68 @@
 
     if (summary) {
       var ship = Cart.shipping();
+      var saved = Cart.savings();
+      var recurring = state
+        .filter(function (i) { return i.plan === 'subscribe'; })
+        .reduce(function (sum, i) { return sum + unitPrice(bySlug[i.slug], 'subscribe') * i.qty; }, 0);
+
       summary.innerHTML =
+        (saved > 0 ? '<div class="sum-row"><span>Subscription saving</span><span>&minus;' + money(saved) + '</span></div>' : '') +
         '<div class="sum-row"><span>Subtotal</span><span>' + money(Cart.subtotal()) + '</span></div>' +
         '<div class="sum-row"><span>Shipping</span><span>' + (ship === 0 ? 'Free' : money(ship)) + '</span></div>' +
-        '<div class="sum-row total"><span>Total</span><span>' + money(Cart.total()) + '</span></div>';
+        '<div class="sum-row total"><span>Total today</span><span>' + money(Cart.total()) + '</span></div>' +
+        (recurring > 0
+          ? '<p class="small muted mt-8">Then ' + money(recurring) + ' every ' + Cart.interval() +
+            ' days until you cancel. Skip or cancel any time.</p>'
+          : '');
     }
+
+    syncSubscriptionBox();
+  }
+
+  /* ── checkout subscription toggle ─────────────────────────── */
+
+  function syncSubscriptionBox() {
+    var box = document.querySelector('[data-sub-toggle]');
+    if (!box) return;
+    var wrap = document.querySelector('[data-sub-interval-wrap]');
+    var saving = document.querySelector('[data-sub-saving]');
+    var plan = Cart.planState();
+
+    box.checked = plan === 'subscribe';
+    box.indeterminate = plan === 'mixed';
+    box.disabled = plan === 'empty';
+
+    var panel = box.closest('.sub-toggle');
+    if (panel) panel.classList.toggle('is-on', plan === 'subscribe' || plan === 'mixed');
+    if (wrap) wrap.hidden = plan === 'onetime' || plan === 'empty';
+
+    if (saving) {
+      var amount = Cart.subscriptionSaving();
+      saving.textContent = plan === 'subscribe'
+        ? 'You are saving ' + money(Cart.savings()) + ' on this order.'
+        : amount > 0
+          ? 'Saves ' + money(amount) + ' on this order and every one after it.'
+          : '';
+    }
+  }
+
+  function wireSubscriptionToggle() {
+    var box = document.querySelector('[data-sub-toggle]');
+    if (!box) return;
+
+    box.addEventListener('change', function () {
+      Cart.setAllPlans(box.checked ? 'subscribe' : 'onetime');
+      toast(box.checked ? 'Order set to Subscribe & Save' : 'Switched to a one-time order');
+    });
+
+    var select = document.querySelector('[data-sub-interval]');
+    if (select) {
+      select.value = Cart.interval();
+      select.addEventListener('change', function () { Cart.setInterval(select.value); });
+    }
+
+    syncSubscriptionBox();
   }
 
   /* ── notify / signup forms ────────────────────────────────── */
@@ -484,6 +583,7 @@
     renderCheckoutPage();
     wireForms();
     wireFilters();
+    wireSubscriptionToggle();
 
     document.addEventListener('moddose:cartchange', function () {
       syncHeader();

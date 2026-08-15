@@ -55,6 +55,38 @@
         <p><strong>Payment is not connected on this store yet.</strong> Card processing has to be handled by a PCI-compliant provider, so this page deliberately does not ask for card details. Connect a payment provider before launch — the developer notes in the repository README explain exactly where the handoff goes.</p>
       </div>
 
+      <div class="panel sub-toggle mb-24">
+        <label class="sub-toggle-row">
+          <input type="checkbox" data-sub-toggle>
+          <span class="sub-toggle-main">
+            <span class="sub-toggle-title">
+              Make this a subscription
+              <span class="save-pill">Save 20%</span>
+            </span>
+            <span class="sub-toggle-note" data-sub-saving></span>
+          </span>
+        </label>
+
+        <div class="sub-interval" data-sub-interval-wrap hidden>
+          <label for="sub-interval">Deliver</label>
+          <select id="sub-interval" data-sub-interval>
+            <option value="30">every 30 days</option>
+            <option value="45">every 45 days</option>
+            <option value="60">every 60 days</option>
+            <option value="90">every 90 days</option>
+          </select>
+        </div>
+
+        <p class="sub-terms">
+          Ticking this box sets up a recurring order. You will be charged the subscription
+          price shown in the summary at the interval you choose, starting today, until you
+          cancel. We email you three days before every shipment so you can skip or change it,
+          and you can cancel at any time from your account or that email &mdash; there is no
+          minimum term and no cancellation fee. Full detail in the
+          <a href="/legal/terms/">terms of service</a>.
+        </p>
+      </div>
+
       <div class="panel mb-24">
         <h2>Your order</h2>
         <div data-checkout-items></div>
