@@ -1,0 +1,18 @@
+name = "moddose-checkout"
+main = "src/index.js"
+compatibility_date = "2026-08-01"
+
+[vars]
+SITE_ORIGIN = "https://moddose.com"
+CURRENCY = "usd"
+SUBSCRIBE_DISCOUNT = "0.2"
+FREE_SHIPPING_THRESHOLD = "50"
+SHIPPING_FLAT = "5.95"
+AUTOMATIC_TAX = "false"
+
+# Secrets are NOT set here. Use:
+#   npx wrangler secret put STRIPE_SECRET_KEY
+#   npx wrangler secret put STRIPE_WEBHOOK_SECRET
+
+[env.staging.vars]
+SITE_ORIGIN = "http://localhost:4173"

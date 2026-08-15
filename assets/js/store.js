@@ -6,11 +6,14 @@
 (function () {
   'use strict';
 
+  var PUBLIC = window.MODDOSE_CONFIG || {};
+
   var CONFIG = {
     storageKey: 'moddose.cart.v1',
-    subscribeDiscount: 0.20,
-    freeShippingThreshold: 50,
-    shippingFlat: 5.95,
+    subscribeDiscount: PUBLIC.subscribeDiscount != null ? PUBLIC.subscribeDiscount : 0.20,
+    freeShippingThreshold: PUBLIC.freeShippingThreshold != null ? PUBLIC.freeShippingThreshold : 50,
+    shippingFlat: PUBLIC.shippingFlat != null ? PUBLIC.shippingFlat : 5.95,
+    checkoutEndpoint: PUBLIC.checkoutEndpoint || '',
     currency: 'USD'
   };
 
@@ -403,6 +406,66 @@
 
 
 
+
+  /* ── Stripe checkout ──────────────────────────────────────── */
+
+  function wireStripeCheckout() {
+    var button = document.querySelector('[data-stripe-checkout]');
+    if (!button) return;
+    var errorEl = document.querySelector('[data-checkout-error]');
+    var pending = false;
+
+    function fail(message) {
+      if (errorEl) errorEl.textContent = message;
+      button.disabled = false;
+      button.textContent = 'Pay with card';
+      pending = false;
+    }
+
+    button.addEventListener('click', function () {
+      if (pending) return;
+      if (state.length === 0) { fail('Your cart is empty.'); return; }
+      if (!CONFIG.checkoutEndpoint) { fail('Checkout is not configured.'); return; }
+
+      pending = true;
+      if (errorEl) errorEl.textContent = '';
+      button.disabled = true;
+      button.textContent = 'Redirecting to payment…';
+
+      // Only slug, quantity and plan are sent. The server prices the cart.
+      fetch(CONFIG.checkoutEndpoint.replace(/\/$/, '') + '/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: state.map(function (i) { return { slug: i.slug, qty: i.qty, plan: i.plan }; }),
+          interval: Number(Cart.interval())
+        })
+      })
+        .then(function (res) {
+          return res.json().then(function (body) {
+            if (!res.ok) throw new Error(body && body.error ? body.error : 'Checkout failed');
+            return body;
+          });
+        })
+        .then(function (body) {
+          if (!body.url) throw new Error('Checkout failed');
+          window.location.assign(body.url);
+        })
+        .catch(function (err) {
+          fail(err.message + ' If this keeps happening, email ' + 'support@moddose.com' + '.');
+        });
+    });
+  }
+
+  /* ── order confirmation ───────────────────────────────────── */
+
+  function wireSuccessPage() {
+    var host = document.querySelector('[data-order-confirmed]');
+    if (!host) return;
+    // Stripe has taken payment; the cart it was built from is spent.
+    Cart.clear();
+  }
+
   /* ── product image gallery ────────────────────────────────── */
 
   function wireGallery() {
@@ -592,6 +655,15 @@
   /* ── boot ─────────────────────────────────────────────────── */
 
   function boot() {
+    // Register before anything can mutate the cart — wireSuccessPage() clears
+    // it during boot, and that change has to reach the header badge.
+    document.addEventListener('moddose:cartchange', function () {
+      syncHeader();
+      renderDrawer();
+      renderCartPage();
+      renderCheckoutPage();
+    });
+
     buildDrawer();
     wireHeader();
     wireAddButtons();
@@ -603,13 +675,8 @@
     wireFilters();
     wireSubscriptionToggle();
     wireGallery();
-
-    document.addEventListener('moddose:cartchange', function () {
-      syncHeader();
-      renderDrawer();
-      renderCartPage();
-      renderCheckoutPage();
-    });
+    wireStripeCheckout();
+    wireSuccessPage();
 
     // Keep tabs in sync.
     window.addEventListener('storage', function (e) {

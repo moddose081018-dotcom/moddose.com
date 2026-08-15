@@ -1,0 +1,107 @@
+# Checkout Worker
+
+Creates Stripe Checkout Sessions for the storefront. The site is static, so this is the
+only server-side component — and it exists for one reason: **the secret key and the prices
+must live somewhere the browser cannot reach.**
+
+```
+POST /checkout   { items: [{slug, qty, plan}], interval }  ->  { url, id }
+POST /webhook    Stripe events, signature verified
+GET  /health
+```
+
+## Why prices are not in the request
+
+The browser sends slugs, quantities and plans. Nothing else. The Worker looks every price up
+in `src/catalog.json`, which is generated from `data/products.json` by the site build, and
+applies the subscription discount itself.
+
+A cart that asks for `alpha-brain` at `$0.50` is charged `$29.90`, and there is a test that
+says so. Any change that starts trusting a client-supplied amount is a bug, however
+convenient it looks.
+
+## Deploy
+
+```bash
+cd worker
+npx wrangler login
+npx wrangler deploy
+```
+
+Then set the secrets — these are prompted for and never written to a file:
+
+```bash
+npx wrangler secret put STRIPE_SECRET_KEY       # sk_test_... first, sk_live_... later
+npx wrangler secret put STRIPE_WEBHOOK_SECRET   # whsec_... from the webhook endpoint
+```
+
+**Never put a secret key in `wrangler.toml`, in the site, or in a chat window.** If one is
+ever pasted somewhere it should not be, roll it in the Stripe dashboard immediately —
+rotation is free, a leaked live key is not.
+
+Non-secret settings live in `wrangler.toml` `[vars]`: `SITE_ORIGIN` (the only allowed CORS
+origin), `CURRENCY`, `SUBSCRIBE_DISCOUNT`, `FREE_SHIPPING_THRESHOLD`, `SHIPPING_FLAT`,
+`AUTOMATIC_TAX`.
+
+## Connect the site to it
+
+Put the deployed URL in `data/site.json`:
+
+```json
+"checkout": { "endpoint": "https://moddose-checkout.<subdomain>.workers.dev" }
+```
+
+Run `npm run build` from the repo root and commit. The checkout page swaps its
+"payment is not connected" notice for a live **Pay with card** button automatically — that
+copy is generated from this setting, so the two cannot disagree.
+
+## Webhooks
+
+Add an endpoint in the Stripe dashboard pointing at `https://<worker>/webhook`, subscribed to
+`checkout.session.completed`, `invoice.paid`, and `customer.subscription.deleted`. Take the
+signing secret it gives you and set it as `STRIPE_WEBHOOK_SECRET`.
+
+`src/index.js` currently logs these events. **Fulfilment is not implemented** — that is where
+you record the order, notify whoever picks and packs, and email the customer. Stripe retries
+webhooks, so whatever you write there has to be idempotent: the same event ID must not ship
+two boxes.
+
+## Subscriptions
+
+A cart containing any subscription line becomes a `mode: subscription` session. One-time lines
+in that cart ride along on the first invoice, which is Stripe's behaviour for non-recurring
+prices in subscription mode.
+
+The delivery interval the customer picked (30/45/60/90 days) becomes
+`recurring: { interval: 'day', interval_count: N }`. Day intervals are used deliberately
+rather than translating 30 days to "monthly" — the site says "every 30 days", so that is what
+gets billed.
+
+## Testing
+
+```bash
+npm test                 # from the repo root, includes the worker's 11 tests
+npx wrangler dev         # local worker at http://localhost:8787
+```
+
+With `wrangler dev` running, point the site at it and rebuild:
+
+```bash
+MODDOSE_CHECKOUT_ENDPOINT=http://localhost:8787 npm run build && npm run serve
+```
+
+Use Stripe test keys and card `4242 4242 4242 4242`. Run `npm run build` again afterwards to
+restore the committed output.
+
+**None of this has been run against Stripe.** It was written to the API contract and its logic
+is unit tested, but no request has ever been made with a real key from this environment. Do a
+full test-mode purchase — one-time and subscription — before switching to live keys.
+
+## Before going live
+
+- [ ] Test-mode purchase completes, one-time and subscription
+- [ ] Webhook fires and the signature verifies (`stripe listen --forward-to`)
+- [ ] Fulfilment implemented and idempotent
+- [ ] `SITE_ORIGIN` set to the real domain, not localhost
+- [ ] Tax decision made — `AUTOMATIC_TAX` requires Stripe Tax to be configured
+- [ ] Live keys set, and the test keys removed

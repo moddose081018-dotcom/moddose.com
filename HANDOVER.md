@@ -155,7 +155,16 @@ label of stock actually held.
 There is no reviews section. An empty one looks worse than none, and inventing testimonials is
 fraud. Add it when there are verified reviews to show.
 
-### 4.7 The subscription checkbox
+### 4.7 Checkout never handles card data
+
+`/checkout/` collects no card details in either state — unconnected or live. Payment happens
+on Stripe's hosted page. Building a card form into this static site would drag it into PCI
+scope for no benefit, and `tools/e2e.mjs` asserts the absence of card inputs both ways.
+
+Prices are never sent from the browser. `worker/src/lineitems.js` prices every cart from its
+own catalog, and a test asserts that a cart asking for a $0.50 Alpha BRAIN is charged $29.90.
+
+### 4.8 The subscription checkbox
 
 `/checkout/` has a tick box that converts the whole order to Subscribe & Save. Three properties
 are load-bearing under ROSCA and the FTC negative-option rule:
@@ -211,13 +220,14 @@ When it lands:
 
 Blocking, in rough priority order:
 
-1. **Payment provider.** `/checkout/` deliberately collects no card details and says so on the
-   page. Wire Stripe Checkout, Shopify Buy Buttons or similar: point the drawer's Checkout
-   button (`renderDrawer` in `assets/js/store.js`) at the provider's hosted session, and remove
-   the notice from `checkout/index.html`. **When the cart contains subscription lines the
-   session must be created in the provider's recurring mode using `Cart.interval()`** — a
-   subscription checkbox that creates a one-off charge is worse than no checkbox. Never build a
-   card form into this static site.
+1. **Payment — built, never run against Stripe.** `worker/` holds a Cloudflare Worker that
+   creates Checkout Sessions; the site is wired to it and switches itself on when
+   `checkout.endpoint` is set in `data/site.json`. Deployment, secrets and a pre-launch
+   checklist are in `worker/README.md`. The logic is unit tested (11 tests) and the client
+   flow is e2e tested against a mock, but **no request has ever been made with a real Stripe
+   key from this environment.** Do a full test-mode purchase, one-time and subscription,
+   before going live. Two invariants: the client never sends prices, and no card input ever
+   appears on this site.
 2. **Email endpoint.** Signup forms have no `action` and say so on submit (`wireForms`). Add
    `action="<endpoint>" method="post"` and the fallback disables itself.
 3. **Legal placeholders.** `[LEGAL ENTITY NAME]`, `[REGISTERED ADDRESS]`, `[JURISDICTION]` in

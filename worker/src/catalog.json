@@ -1,0 +1,56 @@
+{
+  "alpha-brain": {
+    "brand": "Onnit",
+    "name": "Alpha BRAIN",
+    "price": 29.9,
+    "sku": "NTRP-ALPHA-30CT"
+  },
+  "gorilla-mind-energy-focus": {
+    "brand": "Gorilla Mind",
+    "name": "Energy & Focus",
+    "price": 49.8,
+    "sku": "NTRP-GORILLA-12PK"
+  },
+  "qualia-day-night-bundle": {
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind + Qualia Night",
+    "price": 68.7,
+    "sku": "NTRP-QUALIA-BNDL"
+  },
+  "mind-lab-pro": {
+    "brand": "Mind Lab Pro",
+    "name": "Mind Lab Pro",
+    "price": 79.5,
+    "sku": "NTRP-MLP-60CT"
+  },
+  "alpha-brain-black-label": {
+    "brand": "Onnit",
+    "name": "Alpha BRAIN Black Label",
+    "price": 109,
+    "sku": "NTRP-ALPHA-BLACK"
+  },
+  "qualia-mind": {
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "price": 198,
+    "sku": "NTRP-QUALIA-MIND"
+  },
+  "thrivous-day-night-stack": {
+    "brand": "Thrivous",
+    "name": "Complete Day & Night Stack",
+    "price": 249,
+    "sku": "NTRP-THRIVOUS-240"
+  },
+  "qualia-mind-2-bottle": {
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "price": 395,
+    "sku": "NTRP-QUALIA-2PK"
+  },
+  "qualia-mind-4-bottle": {
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "price": 790,
+    "sku": "NTRP-QUALIA-4PK"
+  }
+}

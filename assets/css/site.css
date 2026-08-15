@@ -542,3 +542,6 @@ body[data-page="contact"] .main-nav a[href="/contact/"] { color: var(--ink); fon
 
 /* Manufacturer name in the supply-size table */
 .t-brand { display: block; font-size: 12.5px; font-weight: 500; color: var(--ink-3); margin-top: 2px; }
+
+/* Positive variant of the checkout notice */
+.notice-ok { background: var(--forest-tint); border-color: var(--forest); }

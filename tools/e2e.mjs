@@ -13,12 +13,19 @@
  * does not vendor a browser).
  */
 
-import { spawn } from 'node:child_process';
+import { spawn, execFileSync } from 'node:child_process';
+import { createServer } from 'node:http';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const PORT = Number(process.env.PORT) || 4271;
+const MOCK_PORT = PORT + 1;
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type'
+};
 const BASE = `http://localhost:${PORT}`;
 
 const { chromium } = await (async () => {
@@ -161,6 +168,68 @@ ok('shop lists the full catalog', total === 9, total + ' products');
 await page.locator('[data-filter="Bulk Bundle"]').click();
 await page.waitForTimeout(250);
 ok('category filter narrows the grid', (await page.locator('.product-card:visible').count()) === 2);
+
+/* ── payments off: the page must say so and offer nothing ─── */
+await page.goto(BASE + '/checkout/', { waitUntil: 'networkidle' });
+ok('unconfigured checkout says payment is not connected',
+   (await page.locator('.notice').innerText()).includes('not connected'));
+ok('unconfigured checkout button is disabled',
+   await page.locator('button:has-text("Checkout unavailable")').isDisabled());
+
+/* ── payments on: rebuild against a mock endpoint ─────────── */
+let captured = null;
+const mock = createServer((req, res) => {
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204, corsHeaders); res.end(); return;
+  }
+  let body = '';
+  req.on('data', (c) => (body += c));
+  req.on('end', () => {
+    captured = { url: req.url, body: JSON.parse(body || '{}') };
+    res.writeHead(200, { 'Content-Type': 'application/json', ...corsHeaders });
+    res.end(JSON.stringify({ url: BASE + '/checkout/success/', id: 'cs_test_123' }));
+  });
+});
+await new Promise((r) => mock.listen(MOCK_PORT, r));
+
+try {
+  execFileSync(process.execPath, [join(root, 'tools', 'build.mjs')], {
+    cwd: root,
+    env: { ...process.env, MODDOSE_CHECKOUT_ENDPOINT: `http://localhost:${MOCK_PORT}` },
+    stdio: 'ignore'
+  });
+
+  await page.goto(BASE + '/checkout/', { waitUntil: 'networkidle' });
+  await page.evaluate(() => localStorage.setItem('moddose.cart.v1', JSON.stringify([
+    { slug: 'alpha-brain', qty: 1, plan: 'onetime' },
+    { slug: 'mind-lab-pro', qty: 2, plan: 'subscribe' }
+  ])));
+  await page.reload({ waitUntil: 'networkidle' });
+
+  ok('configured checkout drops the not-connected notice',
+     !(await page.locator('.notice').innerText()).includes('not connected'));
+  ok('configured checkout still collects no card details',
+     (await page.locator('input[type="password"], input[name*="card" i], input[autocomplete*="cc-" i]').count()) === 0);
+
+  await page.locator('[data-stripe-checkout]').click();
+  await page.waitForURL('**/checkout/success/**', { timeout: 5000 });
+
+  ok('posts to the /checkout route', captured && captured.url === '/checkout', captured && captured.url);
+  ok('sends only slug, qty and plan',
+     captured && captured.body.items.every((i) => Object.keys(i).sort().join(',') === 'plan,qty,slug'),
+     JSON.stringify(captured && captured.body.items));
+  ok('sends no prices', !JSON.stringify(captured.body).match(/price|amount|total/i));
+  ok('sends the chosen interval', captured.body.interval === 30, String(captured.body.interval));
+  ok('redirects to the URL the server returned', page.url().includes('/checkout/success/'));
+  ok('success page clears the cart',
+     (await page.evaluate(() => localStorage.getItem('moddose.cart.v1'))) === '[]');
+  ok('cart badge resets after purchase',
+     (await page.locator('[data-cart-count]').first().innerText()) === '0');
+} finally {
+  mock.close();
+  // Restore the tracked build so CI's no-diff gate stays honest.
+  execFileSync(process.execPath, [join(root, 'tools', 'build.mjs')], { cwd: root, stdio: 'ignore' });
+}
 
 /* ── mobile ───────────────────────────────────────────────── */
 await page.setViewportSize({ width: 390, height: 844 });

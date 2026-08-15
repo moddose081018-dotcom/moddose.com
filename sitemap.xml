@@ -6,6 +6,7 @@
   <url><loc>https://moddose.com/contact/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://moddose.com/cart/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://moddose.com/checkout/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://moddose.com/checkout/success/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://moddose.com/legal/privacy/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://moddose.com/legal/terms/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://moddose.com/legal/shipping-returns/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

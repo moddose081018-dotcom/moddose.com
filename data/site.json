@@ -8,5 +8,10 @@
   "freeShippingThreshold": 50,
   "subscribeDiscount": 0.2,
   "guaranteeDays": 60,
-  "year": 2026
+  "year": 2026,
+  "checkout": {
+    "_comment": "endpoint is the deployed Worker URL, e.g. https://moddose-checkout.<subdomain>.workers.dev or https://api.moddose.com. Empty = payments not connected; the checkout page then says so.",
+    "endpoint": "",
+    "shippingFlat": 5.95
+  }
 }

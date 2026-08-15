@@ -51,8 +51,12 @@
 
   <div class="cart-layout">
     <div>
-      <div class="notice mb-24">
-        <p><strong>Payment is not connected on this store yet.</strong> Card processing has to be handled by a PCI-compliant provider, so this page deliberately does not ask for card details. Connect a payment provider before launch — the developer notes in the repository README explain exactly where the handoff goes.</p>
+      <div class="mb-24">
+        <!-- BUILD:checkout-notice -->
+<div class="notice">
+  <p><strong>Payment is not connected on this store yet.</strong> Card processing has to be handled by a PCI-compliant provider, so this page deliberately does not ask for card details. Set <code>checkout.endpoint</code> in <code>data/site.json</code> to the deployed checkout Worker to switch payments on.</p>
+</div>
+<!-- /BUILD:checkout-notice -->
       </div>
 
       <div class="panel sub-toggle mb-24">
@@ -93,14 +97,11 @@
       </div>
 
       <div class="panel">
-        <h2>Tell us where to send it</h2>
-        <p class="muted small mb-16">Leave an email and we will let you know the moment ordering opens. Nothing is charged and no card details are collected.</p>
-        <form class="signup" data-signup>
-          <label class="visually-hidden" for="checkout-email">Email address</label>
-          <input type="email" id="checkout-email" name="email" placeholder="you@example.com" required autocomplete="email">
-          <button type="submit" class="btn btn-primary">Notify me</button>
-        </form>
-        <p class="form-note" data-form-note>We will only use this address to tell you when checkout opens.</p>
+        <h2>Delivery and payment</h2>
+        <p class="muted small mb-16">Your delivery address and card details are collected on Stripe's secure payment page. We never see or store your card number.</p>
+        <!-- BUILD:checkout-action -->
+<button type="button" class="btn btn-primary btn-block btn-lg" disabled>Checkout unavailable</button>
+<!-- /BUILD:checkout-action -->
       </div>
     </div>
 
@@ -159,6 +160,7 @@
   </div>
 </footer>
 <!-- /BUILD:footer -->
+<script src="/assets/js/config.js"></script>
 <script src="/assets/js/catalog.js"></script>
 <script src="/assets/js/store.js"></script>
 </body>
