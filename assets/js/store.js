@@ -402,6 +402,24 @@
   }
 
 
+
+  /* ── product image gallery ────────────────────────────────── */
+
+  function wireGallery() {
+    var gallery = document.querySelector('[data-gallery]');
+    if (!gallery) return;
+    var main = gallery.querySelector('[data-gallery-main]');
+    var thumbs = gallery.querySelectorAll('[data-gallery-thumb]');
+    if (!main || thumbs.length < 2) return;
+
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener('click', function () {
+        main.src = thumb.dataset.galleryThumb;
+        thumbs.forEach(function (t) { t.classList.toggle('is-active', t === thumb); });
+      });
+    });
+  }
+
   /* ── shop category filter ─────────────────────────────────── */
 
   function wireFilters() {
@@ -584,6 +602,7 @@
     wireForms();
     wireFilters();
     wireSubscriptionToggle();
+    wireGallery();
 
     document.addEventListener('moddose:cartchange', function () {
       syncHeader();

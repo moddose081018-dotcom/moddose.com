@@ -6,7 +6,9 @@
     "name": "Focus Starter",
     "subtitle": "30 capsules",
     "category": "Focus & Memory",
-    "tags": ["starter"],
+    "tags": [
+      "starter"
+    ],
     "badge": "Start here",
     "featured": true,
     "amazon_price": 29.98,
@@ -16,7 +18,11 @@
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "colors": {
+      "base": "#1E4D3B",
+      "tint": "#EAF1ED",
+      "cap": "#153A2C"
+    },
     "tagline": "The smallest sensible way to find out if this works for you.",
     "shortDesc": "A two-week trial size of our daily focus formula, for people who would rather test something than commit to it.",
     "longDesc": [
@@ -24,15 +30,30 @@
       "Focus Starter exists so that experiment costs you the price of a few coffees. Fifteen servings, the same formula as the full-size bottle, no subscription attached."
     ],
     "benefits": [
-      { "title": "Formulated for daily focus", "text": "Designed to support attention and mental clarity during long work sessions." },
-      { "title": "A real trial length", "text": "Fifteen servings — long enough to notice a pattern rather than a single good day." },
-      { "title": "No commitment", "text": "One-time purchase. Subscribe later only if it earns it." }
+      {
+        "title": "Formulated for daily focus",
+        "text": "Designed to support attention and mental clarity during long work sessions."
+      },
+      {
+        "title": "A real trial length",
+        "text": "Fifteen servings — long enough to notice a pattern rather than a single good day."
+      },
+      {
+        "title": "No commitment",
+        "text": "One-time purchase. Subscribe later only if it earns it."
+      }
     ],
     "usage": "Take 2 capsules in the morning with water. Do not exceed the labelled serving.",
     "whoFor": "First-time buyers who want to test the category before spending real money.",
     "faq": [
-      { "q": "How long before I notice anything?", "a": "Effects vary between individuals, and some people notice nothing at all. Give it the full fifteen servings before deciding, and pay attention to sleep and caffeine as confounders." },
-      { "q": "Can I take it with coffee?", "a": "Many people do, but stack stimulants carefully and start with less caffeine than usual on your first few days." }
+      {
+        "q": "How long before I notice anything?",
+        "a": "Effects vary between individuals, and some people notice nothing at all. Give it the full fifteen servings before deciding, and pay attention to sleep and caffeine as confounders."
+      },
+      {
+        "q": "Can I take it with coffee?",
+        "a": "Many people do, but stack stimulants carefully and start with less caffeine than usual on your first few days."
+      }
     ]
   },
   {
@@ -42,7 +63,9 @@
     "name": "Energy & Focus Stack",
     "subtitle": "12-pack",
     "category": "Energy & Focus",
-    "tags": ["mid-tier"],
+    "tags": [
+      "mid-tier"
+    ],
     "badge": "",
     "featured": true,
     "amazon_price": 49.95,
@@ -52,7 +75,11 @@
     "form": "Powder sachet",
     "weightKg": 0.5,
     "inventory": 100,
-    "colors": { "base": "#B23A48", "tint": "#F8EAEC", "cap": "#8C2A36" },
+    "colors": {
+      "base": "#B23A48",
+      "tint": "#F8EAEC",
+      "cap": "#8C2A36"
+    },
     "tagline": "For the twelve days a month that actually demand it.",
     "shortDesc": "A stimulant-forward energy and focus formula in single-serve sachets, built for demanding days rather than daily use.",
     "longDesc": [
@@ -60,15 +87,30 @@
       "Twelve servings is deliberate. If you are finishing a pack a week, the problem is your sleep, not your supplement."
     ],
     "benefits": [
-      { "title": "Single-serve accuracy", "text": "Pre-measured sachets — no scoop, no guessing, no creeping dose." },
-      { "title": "Built for peak days", "text": "Formulated for deadlines, early starts and long drives rather than everyday background use." },
-      { "title": "Travels flat", "text": "Sachets fit a laptop sleeve, a glovebox or a jacket pocket." }
+      {
+        "title": "Single-serve accuracy",
+        "text": "Pre-measured sachets — no scoop, no guessing, no creeping dose."
+      },
+      {
+        "title": "Built for peak days",
+        "text": "Formulated for deadlines, early starts and long drives rather than everyday background use."
+      },
+      {
+        "title": "Travels flat",
+        "text": "Sachets fit a laptop sleeve, a glovebox or a jacket pocket."
+      }
     ],
     "usage": "Mix one sachet into 300–400 ml of cold water. Use on demanding days only. Avoid within six hours of bedtime.",
     "whoFor": "People with occasional high-demand days who do not want a daily stimulant habit.",
     "faq": [
-      { "q": "Can I take this every day?", "a": "We do not recommend it. Stimulant tolerance builds quickly, and the value of this formula depends on it staying occasional." },
-      { "q": "How much caffeine is in it?", "a": "The exact amount is printed on the sachet. Count it against your daily total, including coffee." }
+      {
+        "q": "Can I take this every day?",
+        "a": "We do not recommend it. Stimulant tolerance builds quickly, and the value of this formula depends on it staying occasional."
+      },
+      {
+        "q": "How much caffeine is in it?",
+        "a": "The exact amount is printed on the sachet. Count it against your daily total, including coffee."
+      }
     ]
   },
   {
@@ -78,17 +120,24 @@
     "name": "Day & Night Brain Bundle",
     "subtitle": "Focus + sleep support",
     "category": "Cognitive Support",
-    "tags": ["mid-tier", "bundle"],
+    "tags": [
+      "mid-tier",
+      "bundle"
+    ],
     "badge": "Both ends of the day",
     "featured": true,
-    "amazon_price": 69.00,
+    "amazon_price": 69.0,
     "count": "30 day servings + 30 night servings",
     "servings": 30,
     "servingSize": "See each formula",
     "form": "Two products",
     "weightKg": 0.2,
     "inventory": 50,
-    "colors": { "base": "#2B3A67", "tint": "#EAEDF4", "cap": "#1F2B4D" },
+    "colors": {
+      "base": "#2B3A67",
+      "tint": "#EAEDF4",
+      "cap": "#1F2B4D"
+    },
     "tagline": "Focus is downstream of sleep.",
     "shortDesc": "A daytime focus formula paired with an evening wind-down formula, because the two problems are the same problem.",
     "longDesc": [
@@ -96,15 +145,30 @@
       "This bundle covers both ends: a daytime formula for attention, and a non-sedating evening formula to support the wind-down. One month of each."
     ],
     "benefits": [
-      { "title": "Addresses the actual loop", "text": "Daytime focus support paired with evening wind-down support." },
-      { "title": "Nothing habit-forming at night", "text": "The evening formula is not a sedative and contains no prescription sleep agents." },
-      { "title": "A full month of each", "text": "Thirty servings per side — enough to judge the routine, not just the product." }
+      {
+        "title": "Addresses the actual loop",
+        "text": "Daytime focus support paired with evening wind-down support."
+      },
+      {
+        "title": "Nothing habit-forming at night",
+        "text": "The evening formula is not a sedative and contains no prescription sleep agents."
+      },
+      {
+        "title": "A full month of each",
+        "text": "Thirty servings per side — enough to judge the routine, not just the product."
+      }
     ],
     "usage": "Day formula with breakfast. Night formula 30–60 minutes before bed. Do not double up on the day formula late in the afternoon.",
     "whoFor": "Anyone whose focus problem starts at 11pm the night before.",
     "faq": [
-      { "q": "Can I buy the halves separately?", "a": "Not currently — the bundle price is the reason it exists. Individual SKUs are on the roadmap." },
-      { "q": "Will the night formula make me groggy?", "a": "It is not sedating and contains no melatonin, so morning grogginess is uncommon. Everyone responds differently, so try it first on a night without an early start." }
+      {
+        "q": "Can I buy the halves separately?",
+        "a": "Not currently — the bundle price is the reason it exists. Individual SKUs are on the roadmap."
+      },
+      {
+        "q": "Will the night formula make me groggy?",
+        "a": "It is not sedating and contains no melatonin, so morning grogginess is uncommon. Everyone responds differently, so try it first on a night without an early start."
+      }
     ]
   },
   {
@@ -114,7 +178,9 @@
     "name": "Universal Brain Formula",
     "subtitle": "60 capsules",
     "category": "Universal Brain Support",
-    "tags": ["bulk-entry"],
+    "tags": [
+      "bulk-entry"
+    ],
     "badge": "Most popular",
     "featured": true,
     "amazon_price": 79.99,
@@ -124,7 +190,11 @@
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": { "base": "#5B4B8A", "tint": "#EEEBF5", "cap": "#453868" },
+    "colors": {
+      "base": "#5B4B8A",
+      "tint": "#EEEBF5",
+      "cap": "#453868"
+    },
     "tagline": "One bottle, one month, no stack to manage.",
     "shortDesc": "A single broad-spectrum daily formula for people who want one bottle on the shelf instead of six.",
     "longDesc": [
@@ -132,15 +202,30 @@
       "This is that bottle: a full month at two capsules a day, stimulant-free, designed to sit alongside coffee rather than compete with it."
     ],
     "benefits": [
-      { "title": "One bottle instead of six", "text": "A broad daily formula rather than a stack you have to manage." },
-      { "title": "Stimulant-free", "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening." },
-      { "title": "A full month", "text": "60 capsules at the labelled two-capsule serving." }
+      {
+        "title": "One bottle instead of six",
+        "text": "A broad daily formula rather than a stack you have to manage."
+      },
+      {
+        "title": "Stimulant-free",
+        "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening."
+      },
+      {
+        "title": "A full month",
+        "text": "60 capsules at the labelled two-capsule serving."
+      }
     ],
     "usage": "Take 2 capsules in the morning with food. Consistency matters more than timing.",
     "whoFor": "People who have tried single-ingredient nootropics and want one considered formula instead.",
     "faq": [
-      { "q": "Does it contain caffeine?", "a": "No. It is designed to be stimulant-free so you control your own caffeine separately." },
-      { "q": "Can I take it alongside the Energy & Focus Stack?", "a": "Yes, on demanding days — but read both labels and count your total caffeine." }
+      {
+        "q": "Does it contain caffeine?",
+        "a": "No. It is designed to be stimulant-free so you control your own caffeine separately."
+      },
+      {
+        "q": "Can I take it alongside the Energy & Focus Stack?",
+        "a": "Yes, on demanding days — but read both labels and count your total caffeine."
+      }
     ]
   },
   {
@@ -150,17 +235,24 @@
     "name": "Black Label",
     "subtitle": "Premium daily formula",
     "category": "Premium Nootropic",
-    "tags": ["bulk", "premium"],
+    "tags": [
+      "bulk",
+      "premium"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 122.50,
+    "amazon_price": 122.5,
     "count": "60 capsules",
     "servings": 30,
     "servingSize": "2 capsules",
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 50,
-    "colors": { "base": "#14161A", "tint": "#ECEAE6", "cap": "#000000" },
+    "colors": {
+      "base": "#14161A",
+      "tint": "#ECEAE6",
+      "cap": "#000000"
+    },
     "tagline": "The upgraded formulation, priced accordingly.",
     "shortDesc": "A higher-specification version of the daily formula, using premium raw materials and standardised extracts.",
     "longDesc": [
@@ -168,15 +260,30 @@
       "It costs meaningfully more and it is not the right first purchase. Start on Focus Starter or the Universal Brain Formula, and move up only if the category is clearly doing something for you."
     ],
     "benefits": [
-      { "title": "Standardised extracts", "text": "Actives specified by extract standardisation rather than raw plant weight." },
-      { "title": "Research-led amounts", "text": "Doses set to the levels used in published human trials where those exist." },
-      { "title": "Honest positioning", "text": "This is an upgrade, not a starting point. We will tell you that on the product page every time." }
+      {
+        "title": "Standardised extracts",
+        "text": "Actives specified by extract standardisation rather than raw plant weight."
+      },
+      {
+        "title": "Research-led amounts",
+        "text": "Doses set to the levels used in published human trials where those exist."
+      },
+      {
+        "title": "Honest positioning",
+        "text": "This is an upgrade, not a starting point. We will tell you that on the product page every time."
+      }
     ],
     "usage": "Take 2 capsules in the morning with food.",
     "whoFor": "Returning customers who already know they respond to the category.",
     "faq": [
-      { "q": "Is it worth the jump from the standard formula?", "a": "Only if the standard formula already works for you. If you noticed nothing on a full month of the Universal Brain Formula, a more expensive version of the same category is unlikely to change that." },
-      { "q": "Can I alternate between the two?", "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise." }
+      {
+        "q": "Is it worth the jump from the standard formula?",
+        "a": "Only if the standard formula already works for you. If you noticed nothing on a full month of the Universal Brain Formula, a more expensive version of the same category is unlikely to change that."
+      },
+      {
+        "q": "Can I alternate between the two?",
+        "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise."
+      }
     ]
   },
   {
@@ -186,17 +293,24 @@
     "name": "Executive Function Blend",
     "subtitle": "Comprehensive formula",
     "category": "Premium Nootropic",
-    "tags": ["bulk", "premium"],
+    "tags": [
+      "bulk",
+      "premium"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 198.00,
+    "amazon_price": 198.0,
     "count": "154 capsules",
     "servings": 22,
     "servingSize": "7 capsules",
     "form": "Capsule",
     "weightKg": 0.2,
     "inventory": 25,
-    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
+    "colors": {
+      "base": "#0F6E86",
+      "tint": "#E6F1F4",
+      "cap": "#0A4F61"
+    },
     "tagline": "The comprehensive end of the shelf.",
     "shortDesc": "A large multi-ingredient formula for people who want breadth in one product rather than a self-assembled stack.",
     "longDesc": [
@@ -204,15 +318,30 @@
       "Breadth has a cost, and not only in money: with this many actives, it is genuinely hard to attribute an effect to any single ingredient. If you want to know what works for you specifically, work up from the simpler formulas instead."
     ],
     "benefits": [
-      { "title": "Breadth in one product", "text": "Replaces a self-assembled multi-bottle stack with a single serving." },
-      { "title": "Full serving, not a token dose", "text": "A seven-capsule serving because the ingredient list does not fit in two." },
-      { "title": "Straight talk on attribution", "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise." }
+      {
+        "title": "Breadth in one product",
+        "text": "Replaces a self-assembled multi-bottle stack with a single serving."
+      },
+      {
+        "title": "Full serving, not a token dose",
+        "text": "A seven-capsule serving because the ingredient list does not fit in two."
+      },
+      {
+        "title": "Straight talk on attribution",
+        "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise."
+      }
     ],
     "usage": "Take 7 capsules in the morning on an empty stomach, or split across breakfast and mid-morning. Many people run five days on, two days off.",
     "whoFor": "Experienced buyers who have already worked out that they respond, and want coverage rather than clarity.",
     "faq": [
-      { "q": "Seven capsules is a lot. Can I take fewer?", "a": "You can take a partial serving, but then you are taking a partial dose of everything, including the ingredients that were the reason you bought it." },
-      { "q": "Should I cycle it?", "a": "Five days on, two off is a common pattern with formulas this broad. It is convention rather than a documented requirement." }
+      {
+        "q": "Seven capsules is a lot. Can I take fewer?",
+        "a": "You can take a partial serving, but then you are taking a partial dose of everything, including the ingredients that were the reason you bought it."
+      },
+      {
+        "q": "Should I cycle it?",
+        "a": "Five days on, two off is a common pattern with formulas this broad. It is convention rather than a documented requirement."
+      }
     ]
   },
   {
@@ -222,7 +351,10 @@
     "name": "Complete Day & Night Stack",
     "subtitle": "240 capsules",
     "category": "Daily Stack",
-    "tags": ["bulk", "bundle"],
+    "tags": [
+      "bulk",
+      "bundle"
+    ],
     "badge": "Best value per day",
     "featured": true,
     "amazon_price": 249.99,
@@ -232,7 +364,11 @@
     "form": "Two bottles",
     "weightKg": 0.5,
     "inventory": 25,
-    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "colors": {
+      "base": "#1E4D3B",
+      "tint": "#EAF1ED",
+      "cap": "#153A2C"
+    },
     "tagline": "Two months of the whole routine.",
     "shortDesc": "A two-month supply of the day and night formulas together, at the lowest cost per day we offer.",
     "longDesc": [
@@ -240,15 +376,30 @@
       "Cost per day is the lowest on the shelf. Cost per mistake, if the category turns out not to work for you, is the highest — which is why Focus Starter exists."
     ],
     "benefits": [
-      { "title": "Lowest cost per day", "text": "Two months of both formulas in a single purchase." },
-      { "title": "The full routine", "text": "Day and night formulas together, matched to the same end date." },
-      { "title": "Fewer reorders", "text": "One delivery every two months instead of four." }
+      {
+        "title": "Lowest cost per day",
+        "text": "Two months of both formulas in a single purchase."
+      },
+      {
+        "title": "The full routine",
+        "text": "Day and night formulas together, matched to the same end date."
+      },
+      {
+        "title": "Fewer reorders",
+        "text": "One delivery every two months instead of four."
+      }
     ],
     "usage": "2 day capsules with breakfast, 2 night capsules 30–60 minutes before bed.",
     "whoFor": "Repeat customers who have finished at least one month and want to stop reordering so often.",
     "faq": [
-      { "q": "Will it stay good for two months?", "a": "Yes — check the printed expiry, which will be well beyond the supply period. Store both bottles somewhere cool and dry." },
-      { "q": "Is this a better deal than subscribing?", "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription." }
+      {
+        "q": "Will it stay good for two months?",
+        "a": "Yes — check the printed expiry, which will be well beyond the supply period. Store both bottles somewhere cool and dry."
+      },
+      {
+        "q": "Is this a better deal than subscribing?",
+        "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription."
+      }
     ]
   },
   {
@@ -258,17 +409,24 @@
     "name": "Executive 2-Bottle Supply",
     "subtitle": "Extended supply bundle",
     "category": "Bulk Bundle",
-    "tags": ["wholesale", "bundle"],
+    "tags": [
+      "wholesale",
+      "bundle"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 396.00,
+    "amazon_price": 396.0,
     "count": "2 bottles",
     "servings": 44,
     "servingSize": "7 capsules",
     "form": "Two bottles",
     "weightKg": 0.5,
     "inventory": 15,
-    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
+    "colors": {
+      "base": "#0F6E86",
+      "tint": "#E6F1F4",
+      "cap": "#0A4F61"
+    },
     "tagline": "Two bottles of the Executive Function Blend.",
     "shortDesc": "An extended supply of the comprehensive formula for people who have settled on it and want to stop reordering.",
     "longDesc": [
@@ -276,15 +434,30 @@
       "Do not start here. Buy one bottle first, finish it, then decide whether the second one is worth $396 of shelf space."
     ],
     "benefits": [
-      { "title": "Roughly three months of supply", "text": "Two bottles at the standard seven-capsule serving." },
-      { "title": "One decision, one delivery", "text": "Fewer reorders, one renewal date." },
-      { "title": "Same formula", "text": "Identical to the single bottle — no reformulation, no bulk-grade substitution." }
+      {
+        "title": "Roughly three months of supply",
+        "text": "Two bottles at the standard seven-capsule serving."
+      },
+      {
+        "title": "One decision, one delivery",
+        "text": "Fewer reorders, one renewal date."
+      },
+      {
+        "title": "Same formula",
+        "text": "Identical to the single bottle — no reformulation, no bulk-grade substitution."
+      }
     ],
     "usage": "As per the single bottle: 7 capsules in the morning, or split across the morning.",
     "whoFor": "Committed users of the Executive Function Blend.",
     "faq": [
-      { "q": "Can I split this with someone?", "a": "Yes — they are two sealed bottles." },
-      { "q": "What is the return position on a bulk bundle?", "a": "The same as everything else: 60 days, opened or unopened. See Shipping & Returns." }
+      {
+        "q": "Can I split this with someone?",
+        "a": "Yes — they are two sealed bottles."
+      },
+      {
+        "q": "What is the return position on a bulk bundle?",
+        "a": "The same as everything else: 60 days, opened or unopened. See Shipping & Returns."
+      }
     ]
   },
   {
@@ -294,17 +467,24 @@
     "name": "Ultimate 4-Bottle Supply",
     "subtitle": "Long-supply bundle",
     "category": "Bulk Bundle",
-    "tags": ["wholesale", "bundle"],
+    "tags": [
+      "wholesale",
+      "bundle"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 792.00,
+    "amazon_price": 792.0,
     "count": "4 bottles",
     "servings": 88,
     "servingSize": "7 capsules",
     "form": "Four bottles",
     "weightKg": 1.0,
     "inventory": 10,
-    "colors": { "base": "#7A6A4F", "tint": "#F4F1EA", "cap": "#5D5039" },
+    "colors": {
+      "base": "#7A6A4F",
+      "tint": "#F4F1EA",
+      "cap": "#5D5039"
+    },
     "tagline": "The largest quantity we will sell you.",
     "shortDesc": "Four bottles of the Executive Function Blend — roughly six months, for people who are certain.",
     "longDesc": [
@@ -312,15 +492,30 @@
       "If you are still here: four sealed bottles, same formula, one delivery, and the same 60-day return window as every other order."
     ],
     "benefits": [
-      { "title": "Roughly six months", "text": "Four bottles at the standard serving." },
-      { "title": "Sealed bottles", "text": "Opened one at a time, so the rest keep to their printed expiry." },
-      { "title": "The 60-day window still applies", "text": "Buying big does not shorten your return rights." }
+      {
+        "title": "Roughly six months",
+        "text": "Four bottles at the standard serving."
+      },
+      {
+        "title": "Sealed bottles",
+        "text": "Opened one at a time, so the rest keep to their printed expiry."
+      },
+      {
+        "title": "The 60-day window still applies",
+        "text": "Buying big does not shorten your return rights."
+      }
     ],
     "usage": "As per the single bottle. Open one bottle at a time and keep the rest sealed and cool.",
     "whoFor": "Long-term users who have already bought this formula more than once.",
     "faq": [
-      { "q": "Should I really buy six months at once?", "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people." },
-      { "q": "Will all four bottles have the same expiry?", "a": "They ship from the same lot wherever stock allows, so expiries will usually match. Check the printed dates on arrival." }
+      {
+        "q": "Should I really buy six months at once?",
+        "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people."
+      },
+      {
+        "q": "Will all four bottles have the same expiry?",
+        "a": "They ship from the same lot wherever stock allows, so expiries will usually match. Check the printed dates on arrival."
+      }
     ]
   }
 ]

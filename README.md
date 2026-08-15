@@ -150,8 +150,19 @@ Blocking:
 
 Worth doing:
 
-- Real product photography to replace the generated SVGs (drop files in `assets/img/`, point
-  `image` at them in `build.mjs`).
+- **Real product photography.** The plumbing is done: drop files in `assets/img/photos/`
+  and add a `photos` array to the product in `data/products.json` (spec and shot list in
+  `assets/img/photos/README.md`). Products with photos use them, products without fall back
+  to the generated SVG art, and a path that does not resolve warns at build time instead of
+  shipping a broken image. More than one photo turns the product page into a gallery.
+
+  Before shooting, settle what the products actually are. The storefront currently names
+  them generically ("Focus Starter", "Universal Brain Formula") while the SKUs map to
+  third-party branded products. Photography forces that to resolve one way or the other:
+  either sell as a curated reseller, using each item's real brand name and manufacturer
+  images you have permission to use — or sell under Moddose branding, which means
+  Moddose-labelled product to photograph. A generic name over a photo of someone else's
+  branded bottle is the one combination that does not work.
 - Customer reviews. There is no review section, because inventing testimonials is fraud and
   an empty one looks worse than none. Add it once you have verified reviews to show.
 - Analytics, if you want it — the privacy policy currently states there is none, so update

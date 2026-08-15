@@ -13,7 +13,7 @@
  *          + injects shared header/footer/grids into every page with BUILD markers
  */
 
-import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, relative } from 'node:path';
 import { applyPriceMatching, loadPricePoints } from './pricing.mjs';
@@ -32,11 +32,34 @@ const source = readJSON('data/products.json');
 
 /* ── 1. price matching ─────────────────────────────────────── */
 
-const products = applyPriceMatching(source, pricePoints).map((p) => ({
-  ...p,
-  image: `/assets/img/${p.slug}.svg`,
-  url: `/products/${p.slug}/`
-}));
+const photoWarnings = [];
+
+/**
+ * Real photography when it exists, generated SVG art when it does not.
+ * A `photos` entry pointing at a missing file warns and falls back rather
+ * than shipping a broken image.
+ */
+function resolveMedia(p) {
+  const art = `/assets/img/${p.slug}.svg`;
+  const photos = (p.photos || []).filter((rel) => {
+    const exists = existsSync(join(root, rel.replace(/^\//, '')));
+    if (!exists) photoWarnings.push(`${p.slug}: missing ${rel}`);
+    return exists;
+  });
+  return { media: photos.length ? photos : [art], hasPhotos: photos.length > 0, art };
+}
+
+const products = applyPriceMatching(source, pricePoints).map((p) => {
+  const { media, hasPhotos, art } = resolveMedia(p);
+  return {
+    ...p,
+    media,
+    hasPhotos,
+    art,
+    image: media[0],
+    url: `/products/${p.slug}/`
+  };
+});
 
 const priceReport = products.map((p) => ({
   sku: p.sku,
@@ -247,13 +270,13 @@ function card(p) {
     : '';
   return `<article class="product-card" style="--pc-tint:${p.colors.tint}">
   ${badge}
-  <a class="pc-media" href="${p.url}" aria-label="${esc(p.name)}">
-    <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}" width="160" height="240" loading="lazy">
+  <a class="pc-media${p.hasPhotos ? ' has-photo' : ''}" href="${p.url}" aria-label="${esc(p.name)}">
+    <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}"${p.hasPhotos ? '' : ' width="160" height="240"'} loading="lazy">
   </a>
   <div class="pc-body">
     <p class="pc-cat">${esc(p.category)}</p>
     <h3><a href="${p.url}">${esc(p.name)}</a></h3>
-    <p class="pc-sub">${esc(p.subtitle)} · ${esc(p.count)}</p>
+    <p class="pc-sub">${esc(p.subtitle)}${p.count && p.count !== p.subtitle ? ' · ' + esc(p.count) : ''}</p>
     <p class="pc-desc">${esc(p.shortDesc)}</p>
     <div class="pc-foot">
       <div>
@@ -382,10 +405,22 @@ ${p.keyIngredients
   </nav>
 
   <div class="pdp" data-buy-scope>
-    <div class="pdp-media">
-      <div class="pdp-figure" style="--pdp-tint:${p.colors.tint}">
-        <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}" width="260" height="390">
+    <div class="pdp-media" data-gallery>
+      <div class="pdp-figure${p.hasPhotos ? ' has-photo' : ''}" style="--pdp-tint:${p.colors.tint}">
+        <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}"${p.hasPhotos ? '' : ' width="260" height="390"'} data-gallery-main>
       </div>
+      ${
+        p.media.length > 1
+          ? `<div class="pdp-thumbs" role="group" aria-label="${esc(p.name)} images">
+        ${p.media
+          .map(
+            (src, i) =>
+              `<button type="button" class="pdp-thumb${i === 0 ? ' is-active' : ''}" data-gallery-thumb="${src}" aria-label="View image ${i + 1} of ${p.media.length}"><img src="${src}" alt="" loading="lazy"></button>`
+          )
+          .join('\n        ')}
+      </div>`
+          : ''
+      }
       <div class="pdp-figure-notes">
         <span class="chip">${esc(p.count)}</span>
         <span class="chip">${esc(p.servings)} servings</span>
@@ -396,7 +431,7 @@ ${p.keyIngredients
     <div class="pdp-info">
       <p class="kicker">${esc(p.category)}</p>
       <h1>${esc(p.name)}</h1>
-      <p class="pdp-sub">${esc(p.subtitle)} · ${esc(p.form)}</p>
+      <p class="pdp-sub">${esc(p.subtitle)}${p.form && p.form !== p.subtitle ? ' · ' + esc(p.form) : ''}</p>
       <p class="pdp-tagline">${esc(p.tagline)}</p>
       <div class="pdp-desc">
         ${(p.longDesc || []).map((t) => `<p>${esc(t)}</p>`).join('\n        ')}
@@ -587,7 +622,16 @@ if (offLadder.length) {
   process.exit(1);
 }
 
+if (photoWarnings.length) {
+  console.warn('\nPhoto references that do not resolve (using generated art instead)');
+  console.warn('─'.repeat(58));
+  photoWarnings.forEach((w) => console.warn('  ' + w));
+}
+
+const withPhotos = products.filter((p) => p.hasPhotos).length;
+
 console.log('\nBuilt');
+console.log(`  ${withPhotos}/${products.length} products using real photography`);
 console.log(`  ${products.length} product pages, ${products.length} SVGs`);
 console.log(`  ${injected} pages had shared regions injected`);
 console.log('  sitemap.xml, robots.txt, data/shopify-import.csv\n');

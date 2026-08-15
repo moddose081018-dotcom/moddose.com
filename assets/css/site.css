@@ -516,3 +516,26 @@ body[data-page="contact"] .main-nav a[href="/contact/"] { color: var(--ink); fon
 .sub-terms { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; margin: 16px 0 0 34px; }
 .sub-terms a { color: var(--ink-2); border-bottom: 1px solid var(--line-2); }
 @media (max-width: 520px) { .sub-interval, .sub-terms { margin-left: 0; } }
+
+/* ── Product photography ────────────────────────────────────
+   Photos are square-cropped; generated SVG art keeps its own
+   proportions on a tinted ground. Fixed frames prevent layout
+   shift while images load. */
+.pc-media.has-photo { padding: 0; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
+.pc-media.has-photo img { width: 100%; height: 100%; object-fit: cover; max-height: none; }
+.product-card:hover .pc-media.has-photo img { transform: scale(1.02); }
+.pc-media.has-photo img { transition: transform .4s var(--ease); }
+
+.pdp-figure.has-photo { padding: 0; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
+.pdp-figure.has-photo img { width: 100%; height: 100%; object-fit: cover; max-height: none; }
+
+.pdp-thumbs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
+.pdp-thumb {
+  width: 76px; aspect-ratio: 1 / 1; padding: 0; overflow: hidden;
+  border: 1px solid var(--line); border-radius: var(--r-sm);
+  background: var(--surface-2); cursor: pointer;
+  transition: border-color .18s var(--ease), transform .18s var(--ease);
+}
+.pdp-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.pdp-thumb:hover { border-color: var(--line-2); transform: translateY(-1px); }
+.pdp-thumb.is-active { border-color: var(--ink); }
