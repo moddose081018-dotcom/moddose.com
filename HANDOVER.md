@@ -229,6 +229,12 @@ Blocking, in rough priority order:
    before going live. Two invariants: the client never sends prices, and no card input ever
    appears on this site.
 
+   The Worker is deployed at `https://moddose-checkout.shane-b73.workers.dev` with no
+   payment secrets, and `checkout.endpoint` in `data/site.json` is deliberately left empty
+   so the storefront keeps saying payments are not connected. Do not point the site at the
+   Worker until a provider key is set — a Pay with card button that 503s is worse than an
+   honest notice.
+
    As of this handover the owner is applying for a payment processor and it may not be
    Stripe. `worker/README.md` has a "Using a different payment provider" section: the cart
    validation, pricing and shipping logic are provider-agnostic, only `src/stripe.js` is not,

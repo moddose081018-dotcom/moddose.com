@@ -82,6 +82,22 @@ Non-secret settings live in `wrangler.toml` `[vars]`: `SITE_ORIGIN` (the only al
 origin), `CURRENCY`, `SUBSCRIBE_DISCOUNT`, `FREE_SHIPPING_THRESHOLD`, `SHIPPING_FLAT`,
 `AUTOMATIC_TAX`.
 
+## Deployed instance
+
+```
+https://moddose-checkout.shane-b73.workers.dev
+```
+
+Deployed and reachable, with **no payment secrets set** — `/checkout` returns
+`503 Checkout is not configured` until a provider key exists. `/health` returns the product
+count and is a quick way to confirm a deploy landed.
+
+The site is **deliberately not pointed at it yet**: `checkout.endpoint` in `data/site.json`
+is empty, so the checkout page still shows the "payment is not connected" notice with a
+disabled button. Wiring the site to a Worker that has no key would replace an honest notice
+with a Pay with card button that errors — strictly worse for a customer. Set the endpoint
+only once a provider key is in place.
+
 ## Connect the site to it
 
 Put the deployed URL in `data/site.json`:
