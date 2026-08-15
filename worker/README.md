@@ -140,6 +140,37 @@ restore the committed output.
 is unit tested, but no request has ever been made with a real key from this environment. Do a
 full test-mode purchase — one-time and subscription — before switching to live keys.
 
+## Using a different payment provider
+
+If the processor turns out not to be Stripe, most of this survives. The split is deliberate:
+
+| File | Provider-specific? |
+|---|---|
+| `src/lineitems.js` | **No.** Cart validation, server-side pricing, the subscription discount, shipping rules, mixed one-time/recurring handling. Keep as is. |
+| `src/stripe.js` | **Yes.** Form encoding, the session call, webhook signature verification. Replace wholesale. |
+| `src/index.js` | Mostly not. Routing, CORS, error handling stay; the session payload shape and the webhook event names change. |
+| `src/catalog.json` | **No.** Generated from the site build. |
+| `assets/js/store.js` (site) | **No.** It posts `{items, interval}` and redirects to whatever URL comes back — that contract fits any hosted-checkout provider. |
+
+The client contract is the part worth protecting: the browser sends slugs, quantities and
+plans, and receives a URL to redirect to. Any provider offering hosted checkout fits that
+shape. A provider requiring an embedded card form does not, and would drag this site into PCI
+scope — treat that as a reason to choose a different provider, not a reason to change the
+architecture.
+
+Two things to confirm with a new provider before building against it:
+
+1. **Recurring billing at arbitrary intervals.** The storefront offers 30/45/60/90 days. Some
+   providers only support monthly/annual, which would mean changing what the site offers —
+   a customer-facing decision, not an implementation detail.
+2. **Category acceptance.** Some processors classify supplements and nootropics as high-risk
+   or restricted. Get that confirmed in writing for both one-time *and* subscription billing
+   before wiring anything, because subscription approval is sometimes separate.
+
+Merchant-of-record providers (Paddle, Lemon Squeezy and similar) handle tax and subscription
+management themselves and would replace more of this Worker than a gateway would — possibly
+all of it, if their hosted checkout accepts a cart directly.
+
 ## Before going live
 
 - [ ] Test-mode purchase completes, one-time and subscription

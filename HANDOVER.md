@@ -228,6 +228,11 @@ Blocking, in rough priority order:
    key from this environment.** Do a full test-mode purchase, one-time and subscription,
    before going live. Two invariants: the client never sends prices, and no card input ever
    appears on this site.
+
+   As of this handover the owner is applying for a payment processor and it may not be
+   Stripe. `worker/README.md` has a "Using a different payment provider" section: the cart
+   validation, pricing and shipping logic are provider-agnostic, only `src/stripe.js` is not,
+   and the browser contract (post a cart, receive a redirect URL) fits any hosted checkout.
 2. **Email endpoint.** Signup forms have no `action` and say so on submit (`wireForms`). Add
    `action="<endpoint>" method="post"` and the fallback disables itself.
 3. **Legal placeholders.** `[LEGAL ENTITY NAME]`, `[REGISTERED ADDRESS]`, `[JURISDICTION]` in
