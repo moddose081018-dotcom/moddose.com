@@ -198,33 +198,32 @@ root-relative paths (`/assets/...`, `/shop/`), so
 `moddose081018-dotcom.github.io/moddose.com/` renders unstyled with broken navigation.
 That URL is not a usable preview — use a custom domain, or `npm run serve` locally.
 
-### Current state: staging
+### Current state: no custom domain
 
-`moddose.com` still serves an existing site (A records at 35.213.177.94, Cloudflare
-proxied), so this store is staged on a subdomain:
+`moddose.com` is mid-transfer to Cloudflare and is not yet serving anything. Until the
+transfer completes there is no working public preview — the github.io subpath URL cannot
+serve this site correctly (see above). Use `npm run serve` for an accurate local view.
 
-```
-CNAME  new   moddose081018-dotcom.github.io   DNS only (grey cloud)
-```
+The Cloudflare zone was pre-populated on creation with records imported from the previous
+host (A records at 35.213.177.94, an SPF referencing `sgp57.siteground.asia`, and a
+`*.moddose.com` wildcard). Treat those as stale until the transfer lands and they can be
+verified.
 
-`CNAME` in this repo reads `new.moddose.com` to match the Pages custom-domain setting.
-Note that with the GitHub Actions source, GitHub reads the custom domain from repository
-settings and ignores this file; it is kept in sync so the two never disagree.
+### When the transfer completes
 
-### Cutting over to the apex later
-
-1. Replace the `@` and `www` A records (35.213.177.94) with either
-   `CNAME @ -> moddose081018-dotcom.github.io` (Cloudflare flattens apex CNAMEs) or
-   GitHub's four A records: 185.199.108.153, 185.199.109.153, 185.199.110.153,
-   185.199.111.153. Keep them **DNS only** until GitHub has issued the certificate.
-2. Change `CNAME` in this repo to `moddose.com` and update the custom domain in
-   Settings -> Pages.
+1. Point the apex at GitHub Pages, either `CNAME @ -> moddose081018-dotcom.github.io`
+   (Cloudflare flattens apex CNAMEs) or GitHub's four A records: 185.199.108.153,
+   185.199.109.153, 185.199.110.153, 185.199.111.153. Remove the stale A records.
+   Keep everything **DNS only** (grey cloud) until GitHub has issued the certificate —
+   proxied records break the certificate challenge.
+2. Set the custom domain to `moddose.com` in Settings -> Pages. With the GitHub Actions
+   source, GitHub reads the domain from repository settings; the `CNAME` file here is
+   kept in sync so the two never disagree.
 3. Tick **Enforce HTTPS** once the certificate is issued.
-4. **Check email afterwards.** The SPF record starts `v=spf1 +a +mx +a:sgp57.siteground.asia`
-   The `+a` mechanism authorises whatever the domain's A record points at, so repointing
-   the apex silently changes what SPF authorises. Mail from the SiteGround host still
-   passes via the explicit `+a:sgp57.siteground.asia`, but send a test message and check
-   the SPF result before assuming it is fine.
+4. **Check email afterwards.** If the imported SPF record is kept, it begins
+   `v=spf1 +a +mx ...` and the `+a` mechanism authorises whatever the apex A record points
+   at — so repointing the apex changes what SPF authorises. Send a test message and check
+   the SPF result rather than assuming.
 
-A `*.moddose.com` wildcard A record exists and catches any subdomain without an explicit
-record, so a staging subdomain needs its own record rather than relying on the wildcard.
+Note that the `*.moddose.com` wildcard catches any subdomain without an explicit record,
+so a staging subdomain would need its own record rather than relying on it.
