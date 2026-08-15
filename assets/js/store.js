@@ -439,8 +439,8 @@
 
       var shown = 0;
       target.querySelectorAll('.product-card').forEach(function (card) {
-        var cat = (card.querySelector('.pc-cat') || {}).textContent || '';
-        var match = want === 'all' || cat.trim() === want;
+        // Category lives in a data attribute — the visible eyebrow shows the brand.
+        var match = want === 'all' || card.dataset.category === want;
         card.hidden = !match;
         if (match) shown++;
       });

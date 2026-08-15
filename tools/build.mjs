@@ -79,39 +79,19 @@ const CHECK = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-
 
 /* ── 3. product art ────────────────────────────────────────── */
 
-/** Break a product name into at most two label lines. */
-function labelLines(name) {
-  const words = name.toUpperCase().split(/\s+/);
-  const lines = [];
-  let cur = '';
-  for (const w of words) {
-    if (!cur) cur = w;
-    else if ((cur + ' ' + w).length <= 11) cur += ' ' + w;
-    else { lines.push(cur); cur = w; if (lines.length === 2) break; }
-  }
-  if (lines.length < 2 && cur) lines.push(cur);
-  return lines.slice(0, 2);
-}
-
-/** Name + brand + count block, sized to fit a 72px-wide label panel. */
+/**
+ * Placeholder art shown until real photography exists.
+ *
+ * Deliberately generic: no brand name and no imitation of a manufacturer's
+ * label. These are other companies' products, and drawing an invented label
+ * for one would misrepresent what arrives in the box.
+ */
 function labelBlock(p, base) {
-  const lines = labelLines(p.name);
-  const longest = Math.max(...lines.map((l) => l.length));
-  const fs = Math.max(6.5, Math.min(11.5, 62 / (longest * 0.66)));
-  const startY = lines.length > 1 ? 124 : 131;
   const font = 'system-ui,-apple-system,Segoe UI,sans-serif';
-
-  const name = lines
-    .map(
-      (line, i) =>
-        `<text x="80" y="${(startY + i * (fs + 2.5)).toFixed(1)}" text-anchor="middle" font-family="${font}" font-size="${fs.toFixed(1)}" font-weight="700" letter-spacing=".6" fill="${base}">${esc(line)}</text>`
-    )
-    .join('\n      ');
-
-  return `${name}
-      <text x="80" y="156" text-anchor="middle" font-family="${font}" font-size="7" letter-spacing="1.1" fill="${base}" opacity=".65">MODDOSE</text>
-      <rect x="62" y="164" width="36" height="1.2" rx=".6" fill="${base}" opacity=".25"/>
-      <text x="80" y="179" text-anchor="middle" font-family="${font}" font-size="6.6" letter-spacing=".5" fill="${base}" opacity=".7">${esc(p.count.toUpperCase())}</text>`;
+  return `<rect x="58" y="122" width="44" height="1.6" rx=".8" fill="${base}" opacity=".22"/>
+      <rect x="66" y="132" width="28" height="1.6" rx=".8" fill="${base}" opacity=".16"/>
+      <text x="80" y="156" text-anchor="middle" font-family="${font}" font-size="7.4" font-weight="600" letter-spacing=".7" fill="${base}" opacity=".75">${esc(p.count.toUpperCase())}</text>
+      <text x="80" y="172" text-anchor="middle" font-family="${font}" font-size="6.2" letter-spacing=".9" fill="${base}" opacity=".45">PHOTO PENDING</text>`;
 }
 
 function bottleSVG(p) {
@@ -169,6 +149,7 @@ const clientCatalog = products.map((p) => ({
   slug: p.slug,
   sku: p.sku,
   name: p.name,
+  brand: p.brand,
   subtitle: p.subtitle,
   category: p.category,
   price: p.price,
@@ -231,14 +212,17 @@ function footer() {
           </svg>
           ${site.brand}
         </a>
-        <p>${site.tagline} Third-party tested, plainly labelled, and priced the same for everyone.</p>
+        <p>${site.tagline} We stock only makers who disclose their doses, and we price the same for everyone.</p>
       </div>
       <div class="footer-col">
         <h4>Shop</h4>
         <a href="/shop/">All products</a>
         <a href="/shop/#tiers">Supply sizes</a>
-        <a href="/products/focus-starter/">Focus Starter</a>
-        <a href="/products/universal-brain-formula/">Universal Brain Formula</a>
+        ${products
+          .filter((p) => p.featured)
+          .slice(0, 2)
+          .map((p) => `<a href="${p.url}">${p.brand} ${p.name}</a>`)
+          .join('\n        ')}
       </div>
       <div class="footer-col">
         <h4>Company</h4>
@@ -253,6 +237,7 @@ function footer() {
         <a href="/legal/shipping-returns/">Refund policy</a>
       </div>
     </div>
+    <p class="disclaimer">${site.brand} is an independent retailer. All product names, brands and trademarks are the property of their respective owners and are used here to identify the genuine products we sell. Use of a brand name does not imply any affiliation with, sponsorship by, or endorsement from its owner. Product formulations, labels and packaging are set by their manufacturers and may change without notice &mdash; the label on the product you receive is the authority.</p>
     <p class="disclaimer"><strong>These statements have not been evaluated by the Food and Drug Administration. These products are not intended to diagnose, treat, cure, or prevent any disease.</strong> Dietary supplements are not a substitute for a varied diet, adequate sleep or medical care. Consult a qualified healthcare professional before starting any supplement, particularly if you are pregnant or breastfeeding, under 18, taking prescription medication, or managing a health condition. Not for sale to anyone under 18.</p>
     <div class="footer-bottom">
       <span>&copy; ${site.year} ${site.brand}. All rights reserved.</span>
@@ -268,13 +253,13 @@ function card(p) {
   const badge = p.badge
     ? `<span class="badge${p.badge === 'Most popular' ? ' badge-sand' : ''}">${esc(p.badge)}</span>`
     : '';
-  return `<article class="product-card" style="--pc-tint:${p.colors.tint}">
+  return `<article class="product-card" data-category="${esc(p.category)}" style="--pc-tint:${p.colors.tint}">
   ${badge}
   <a class="pc-media${p.hasPhotos ? ' has-photo' : ''}" href="${p.url}" aria-label="${esc(p.name)}">
     <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}"${p.hasPhotos ? '' : ' width="160" height="240"'} loading="lazy">
   </a>
   <div class="pc-body">
-    <p class="pc-cat">${esc(p.category)}</p>
+    <p class="pc-cat">${esc(p.brand)}</p>
     <h3><a href="${p.url}">${esc(p.name)}</a></h3>
     <p class="pc-sub">${esc(p.subtitle)}${p.count && p.count !== p.subtitle ? ' · ' + esc(p.count) : ''}</p>
     <p class="pc-desc">${esc(p.shortDesc)}</p>
@@ -299,7 +284,7 @@ function tierLadder() {
     .sort((a, b) => a.price - b.price)
     .map(
       (p) => `<tr>
-      <th scope="row"><a href="${p.url}">${esc(p.name)}</a></th>
+      <th scope="row"><a href="${p.url}">${esc(p.name)}</a><span class="t-brand">${esc(p.brand)}</span></th>
       <td style="text-align:left">${esc(p.count)}</td>
       <td style="text-align:left">${esc(p.category)}</td>
       <td style="text-align:right;font-variant-numeric:tabular-nums">${money(p.price)}</td>
@@ -330,7 +315,7 @@ ${rows}
 
 function pdp(p) {
   const sub = subPrice(p.price);
-  const benefits = (p.benefits || [])
+  const benefits = (p.whyWeStockIt || p.benefits || [])
     .map(
       (b) => `<li>${CHECK}<div><strong>${esc(b.title)}</strong><p>${esc(b.text)}</p></div></li>`
     )
@@ -345,7 +330,7 @@ ${p.keyIngredients
   )
   .join('\n')}
 </table></div>`
-    : `<p class="muted small">The full supplement facts panel is printed on the product label and on the certificate of analysis for the lot you receive. Email <a href="mailto:${site.supportEmail}">${site.supportEmail}</a> for the current panel before you buy.</p>`;
+    : `<p class="muted small">We do not reprint ${esc(p.brand)}'s supplement facts panel here, because the label that ships with your bottle is the authority and formulations change. Read the panel on the product itself, or email <a href="mailto:${site.supportEmail}">${site.supportEmail}</a> and we will send a photograph of the current label before you buy.</p>`;
 
   const faq = (p.faq || [])
     .map(
@@ -361,18 +346,19 @@ ${p.keyIngredients
   const jsonld = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: `${p.name} — ${p.subtitle}`,
+    name: `${p.brand} ${p.name} — ${p.subtitle}`,
     sku: p.sku,
     category: p.category,
     description: p.shortDesc,
     image: `${site.url}${p.image}`,
-    brand: { '@type': 'Brand', name: site.brand },
+    brand: { '@type': 'Brand', name: p.brand },
     offers: {
       '@type': 'Offer',
       url: `${site.url}${p.url}`,
       priceCurrency: 'USD',
       price: p.price.toFixed(2),
-      availability: p.inventory > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock'
+      availability: p.inventory > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+      seller: { '@type': 'Organization', name: site.brand, url: site.url }
     }
   };
 
@@ -381,11 +367,11 @@ ${p.keyIngredients
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${esc(p.name)} — ${esc(p.subtitle)} | ${site.brand}</title>
+<title>${esc(p.brand)} ${esc(p.name)} — ${esc(p.subtitle)} | ${site.brand}</title>
 <meta name="description" content="${esc(p.shortDesc)}">
 <link rel="canonical" href="${site.url}${p.url}">
 <meta property="og:type" content="product">
-<meta property="og:title" content="${esc(p.name)} — ${esc(p.subtitle)} | ${site.brand}">
+<meta property="og:title" content="${esc(p.brand)} ${esc(p.name)} — ${esc(p.subtitle)} | ${site.brand}">
 <meta property="og:description" content="${esc(p.shortDesc)}">
 <meta property="og:url" content="${site.url}${p.url}">
 <meta property="og:image" content="${site.url}${p.image}">
@@ -423,13 +409,13 @@ ${p.keyIngredients
       }
       <div class="pdp-figure-notes">
         <span class="chip">${esc(p.count)}</span>
-        <span class="chip">${esc(p.servings)} servings</span>
+        ${p.servings ? `<span class="chip">${esc(p.servings)} servings</span>` : ''}
         <span class="chip">SKU ${esc(p.sku)}</span>
       </div>
     </div>
 
     <div class="pdp-info">
-      <p class="kicker">${esc(p.category)}</p>
+      <p class="kicker">${esc(p.brand)}</p>
       <h1>${esc(p.name)}</h1>
       <p class="pdp-sub">${esc(p.subtitle)}${p.form && p.form !== p.subtitle ? ' · ' + esc(p.form) : ''}</p>
       <p class="pdp-tagline">${esc(p.tagline)}</p>
@@ -472,10 +458,10 @@ ${p.keyIngredients
         </div>
       </div>
 
-      <h2 class="mb-16" style="font-size:22px">Why this one</h2>
+      <h2 class="mb-16" style="font-size:22px">Why we stock it</h2>
       <ul class="benefit-list">${benefits}</ul>
 
-      <h2 class="mt-32 mb-16" style="font-size:22px">What's in it</h2>
+      <h2 class="mt-32 mb-16" style="font-size:22px">Ingredients</h2>
       ${ingredients}
 
       <h2 class="mt-32 mb-16" style="font-size:22px">How to take it</h2>

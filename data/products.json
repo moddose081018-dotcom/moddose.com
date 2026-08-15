@@ -1,521 +1,335 @@
 [
   {
-    "slug": "focus-starter",
+    "slug": "alpha-brain",
     "sku": "NTRP-ALPHA-30CT",
     "tier": "TIER_10",
-    "name": "Focus Starter",
+    "brand": "Onnit",
+    "name": "Alpha BRAIN",
     "subtitle": "30 capsules",
     "category": "Focus & Memory",
-    "tags": [
-      "starter"
-    ],
+    "tags": ["starter"],
     "badge": "Start here",
     "featured": true,
     "amazon_price": 29.98,
     "count": "30 capsules",
-    "servings": 15,
-    "servingSize": "2 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": {
-      "base": "#1E4D3B",
-      "tint": "#EAF1ED",
-      "cap": "#153A2C"
-    },
-    "tagline": "The smallest sensible way to find out if this works for you.",
-    "shortDesc": "A two-week trial size of our daily focus formula, for people who would rather test something than commit to it.",
+    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "tagline": "The most recognisable name in the category, in its smallest size.",
+    "shortDesc": "Onnit's flagship nootropic in the 30-count bottle — the cheapest honest way to find out whether this category does anything for you.",
     "longDesc": [
-      "Nootropics are individual. What sharpens one person's afternoon does nothing for the next, and the only way to find out which you are is to run the experiment on yourself for a couple of weeks.",
-      "Focus Starter exists so that experiment costs you the price of a few coffees. Fifteen servings, the same formula as the full-size bottle, no subscription attached."
+      "Alpha BRAIN is the product most people mean when they say \"nootropic\". It is also the one with the most argument attached to it, which is exactly why we stock the small bottle: response to this category is individual, and the only way to find out which side of the argument you are on is to try it for a couple of weeks.",
+      "We stock it because Onnit publishes its ingredient list, has run its own human trials, and does not hide behind a single unlabelled blend total. Whether it works for you specifically is a separate question, and one a 30-count bottle answers cheaply."
     ],
-    "benefits": [
-      {
-        "title": "Formulated for daily focus",
-        "text": "Designed to support attention and mental clarity during long work sessions."
-      },
-      {
-        "title": "A real trial length",
-        "text": "Fifteen servings — long enough to notice a pattern rather than a single good day."
-      },
-      {
-        "title": "No commitment",
-        "text": "One-time purchase. Subscribe later only if it earns it."
-      }
+    "whyWeStockIt": [
+      { "title": "The cheapest real trial", "text": "The 30-count bottle is enough to notice a pattern without committing to a month's spend." },
+      { "title": "A brand that publishes", "text": "Onnit lists its ingredients and has funded human research on the formula — rarer in this category than it should be." },
+      { "title": "Easy to send back", "text": "Our 60-day return policy applies to opened bottles, so a trial that goes nowhere costs you nothing." }
     ],
-    "usage": "Take 2 capsules in the morning with water. Do not exceed the labelled serving.",
+    "usage": "Follow the serving on the manufacturer's label. Most people take it in the morning, with or without food.",
     "whoFor": "First-time buyers who want to test the category before spending real money.",
     "faq": [
-      {
-        "q": "How long before I notice anything?",
-        "a": "Effects vary between individuals, and some people notice nothing at all. Give it the full fifteen servings before deciding, and pay attention to sleep and caffeine as confounders."
-      },
-      {
-        "q": "Can I take it with coffee?",
-        "a": "Many people do, but stack stimulants carefully and start with less caffeine than usual on your first few days."
-      }
+      { "q": "How long before I notice anything?", "a": "Response varies a lot between individuals and some people notice nothing at all. Give it the full bottle before deciding, and watch sleep and caffeine as confounders." },
+      { "q": "Is this the same product sold elsewhere?", "a": "Yes — genuine Onnit stock, in the manufacturer's sealed packaging, with the same label and lot coding you would get buying direct." }
     ]
   },
   {
-    "slug": "energy-focus-stack",
+    "slug": "gorilla-mind-energy-focus",
     "sku": "NTRP-GORILLA-12PK",
     "tier": "TIER_20",
-    "name": "Energy & Focus Stack",
+    "brand": "Gorilla Mind",
+    "name": "Energy & Focus",
     "subtitle": "12-pack",
     "category": "Energy & Focus",
-    "tags": [
-      "mid-tier"
-    ],
+    "tags": ["mid-tier"],
     "badge": "",
     "featured": true,
     "amazon_price": 49.95,
     "count": "12 servings",
     "servings": 12,
-    "servingSize": "1 sachet",
+    "servingSize": "1 single-serve pack",
     "form": "Powder sachet",
     "weightKg": 0.5,
     "inventory": 100,
-    "colors": {
-      "base": "#B23A48",
-      "tint": "#F8EAEC",
-      "cap": "#8C2A36"
-    },
-    "tagline": "For the twelve days a month that actually demand it.",
-    "shortDesc": "A stimulant-forward energy and focus formula in single-serve sachets, built for demanding days rather than daily use.",
+    "colors": { "base": "#B23A48", "tint": "#F8EAEC", "cap": "#8C2A36" },
+    "tagline": "Stimulant-forward, single-serve, and deliberately not a daily.",
+    "shortDesc": "Gorilla Mind's energy and focus formula in single-serve packs — built for demanding days rather than everyday use.",
     "longDesc": [
-      "Some days need more than a baseline. This is the formula for those: an energy and focus blend in single-serve sachets, so the dose is fixed and the packet count tells you honestly how often you are reaching for it.",
-      "Twelve servings is deliberate. If you are finishing a pack a week, the problem is your sleep, not your supplement."
+      "This is the loudest thing we stock. It is stimulant-forward, it is meant for days that genuinely demand it, and the single-serve format is the reason we carry it rather than a tub: the dose is fixed, and the pack count tells you honestly how often you are reaching for it.",
+      "Twelve servings is not a shortcoming. If you are finishing a box a week, the problem is your sleep, not your supplement, and nothing on this site will fix that."
     ],
-    "benefits": [
-      {
-        "title": "Single-serve accuracy",
-        "text": "Pre-measured sachets — no scoop, no guessing, no creeping dose."
-      },
-      {
-        "title": "Built for peak days",
-        "text": "Formulated for deadlines, early starts and long drives rather than everyday background use."
-      },
-      {
-        "title": "Travels flat",
-        "text": "Sachets fit a laptop sleeve, a glovebox or a jacket pocket."
-      }
+    "whyWeStockIt": [
+      { "title": "Fixed doses", "text": "Single-serve packs mean no scoop, no guessing, and no dose that creeps upward over a month." },
+      { "title": "Honest about what it is", "text": "Gorilla Mind does not market this as a gentle daily. Neither do we." },
+      { "title": "Travels flat", "text": "Packs fit a laptop sleeve, a glovebox or a jacket pocket." }
     ],
-    "usage": "Mix one sachet into 300–400 ml of cold water. Use on demanding days only. Avoid within six hours of bedtime.",
+    "usage": "Mix one pack into water per the manufacturer's label. Avoid within six hours of bedtime, and count its caffeine against your daily total.",
     "whoFor": "People with occasional high-demand days who do not want a daily stimulant habit.",
     "faq": [
-      {
-        "q": "Can I take this every day?",
-        "a": "We do not recommend it. Stimulant tolerance builds quickly, and the value of this formula depends on it staying occasional."
-      },
-      {
-        "q": "How much caffeine is in it?",
-        "a": "The exact amount is printed on the sachet. Count it against your daily total, including coffee."
-      }
+      { "q": "Can I take this every day?", "a": "We would not. Stimulant tolerance builds quickly, and the value of a formula like this depends on it staying occasional." },
+      { "q": "How much caffeine is in it?", "a": "Check the current label — the amount is printed on the pack, and it counts against your daily total including coffee." }
     ]
   },
   {
-    "slug": "day-night-bundle",
+    "slug": "qualia-day-night-bundle",
     "sku": "NTRP-QUALIA-BNDL",
     "tier": "TIER_30",
-    "name": "Day & Night Brain Bundle",
-    "subtitle": "Focus + sleep support",
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind + Qualia Night",
+    "subtitle": "Day and night bundle",
     "category": "Cognitive Support",
-    "tags": [
-      "mid-tier",
-      "bundle"
-    ],
+    "tags": ["mid-tier", "bundle"],
     "badge": "Both ends of the day",
     "featured": true,
-    "amazon_price": 69.0,
-    "count": "30 day servings + 30 night servings",
-    "servings": 30,
-    "servingSize": "See each formula",
+    "amazon_price": 69.00,
+    "count": "2 products",
+    "servings": null,
+    "servingSize": "Per each product's label",
     "form": "Two products",
     "weightKg": 0.2,
     "inventory": 50,
-    "colors": {
-      "base": "#2B3A67",
-      "tint": "#EAEDF4",
-      "cap": "#1F2B4D"
-    },
+    "colors": { "base": "#2B3A67", "tint": "#EAEDF4", "cap": "#1F2B4D" },
     "tagline": "Focus is downstream of sleep.",
-    "shortDesc": "A daytime focus formula paired with an evening wind-down formula, because the two problems are the same problem.",
+    "shortDesc": "Neurohacker's daytime and evening formulas bought together — because for most people the focus problem starts the night before.",
     "longDesc": [
       "Almost everyone shopping for a focus supplement is really shopping for the consequences of a bad night. Treating only the daytime half of that loop is how people end up escalating stimulants for months without getting anywhere.",
-      "This bundle covers both ends: a daytime formula for attention, and a non-sedating evening formula to support the wind-down. One month of each."
+      "This bundle is the reason we carry Neurohacker at all: they make both halves, designed to be taken together, and selling them as a pair is more honest than selling the daytime one alone to someone who is not sleeping."
     ],
-    "benefits": [
-      {
-        "title": "Addresses the actual loop",
-        "text": "Daytime focus support paired with evening wind-down support."
-      },
-      {
-        "title": "Nothing habit-forming at night",
-        "text": "The evening formula is not a sedative and contains no prescription sleep agents."
-      },
-      {
-        "title": "A full month of each",
-        "text": "Thirty servings per side — enough to judge the routine, not just the product."
-      }
+    "whyWeStockIt": [
+      { "title": "Addresses the actual loop", "text": "Daytime and evening formulas from the same maker, intended to be used together." },
+      { "title": "Nothing habit-forming at night", "text": "The evening formula contains no prescription sleep agents." },
+      { "title": "Cheaper as a pair", "text": "Bundled below the sum of the two bought separately." }
     ],
-    "usage": "Day formula with breakfast. Night formula 30–60 minutes before bed. Do not double up on the day formula late in the afternoon.",
+    "usage": "Follow each product's own label — they have different serving sizes and different timings.",
     "whoFor": "Anyone whose focus problem starts at 11pm the night before.",
     "faq": [
-      {
-        "q": "Can I buy the halves separately?",
-        "a": "Not currently — the bundle price is the reason it exists. Individual SKUs are on the roadmap."
-      },
-      {
-        "q": "Will the night formula make me groggy?",
-        "a": "It is not sedating and contains no melatonin, so morning grogginess is uncommon. Everyone responds differently, so try it first on a night without an early start."
-      }
+      { "q": "Can I buy the halves separately?", "a": "Qualia Mind on its own is stocked in the larger sizes. The evening formula is currently bundle-only here." },
+      { "q": "Will the night formula make me groggy?", "a": "It is not intended to be sedating, but individual response varies. Try it first on a night without an early start." }
     ]
   },
   {
-    "slug": "universal-brain-formula",
+    "slug": "mind-lab-pro",
     "sku": "NTRP-MLP-60CT",
     "tier": "TIER_50",
-    "name": "Universal Brain Formula",
-    "subtitle": "60 capsules",
+    "brand": "Mind Lab Pro",
+    "name": "Mind Lab Pro",
+    "subtitle": "Universal Nootropic · 60 capsules",
     "category": "Universal Brain Support",
-    "tags": [
-      "bulk-entry"
-    ],
+    "tags": ["bulk-entry"],
     "badge": "Most popular",
     "featured": true,
     "amazon_price": 79.99,
     "count": "60 capsules",
-    "servings": 30,
-    "servingSize": "2 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": {
-      "base": "#5B4B8A",
-      "tint": "#EEEBF5",
-      "cap": "#453868"
-    },
+    "colors": { "base": "#5B4B8A", "tint": "#EEEBF5", "cap": "#453868" },
     "tagline": "One bottle, one month, no stack to manage.",
-    "shortDesc": "A single broad-spectrum daily formula for people who want one bottle on the shelf instead of six.",
+    "shortDesc": "A single broad-spectrum, stimulant-free daily formula for people who want one bottle on the shelf instead of six.",
     "longDesc": [
       "The usual nootropic path is six bottles, a spreadsheet and a slowly growing suspicion that none of it is doing anything. The alternative is one broad formula taken consistently for long enough to actually judge.",
-      "This is that bottle: a full month at two capsules a day, stimulant-free, designed to sit alongside coffee rather than compete with it."
+      "Mind Lab Pro is the one we point most people at for that job: stimulant-free, so it does not fight with your coffee, and fully disclosed — every ingredient amount is printed rather than buried in a blend total. That disclosure is the reason it is on this shelf."
     ],
-    "benefits": [
-      {
-        "title": "One bottle instead of six",
-        "text": "A broad daily formula rather than a stack you have to manage."
-      },
-      {
-        "title": "Stimulant-free",
-        "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening."
-      },
-      {
-        "title": "A full month",
-        "text": "60 capsules at the labelled two-capsule serving."
-      }
+    "whyWeStockIt": [
+      { "title": "Fully disclosed doses", "text": "Every ingredient amount printed on the label, with no proprietary blend hiding the numbers." },
+      { "title": "Stimulant-free", "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening." },
+      { "title": "One bottle instead of six", "text": "A single broad formula rather than a stack you have to manage." }
     ],
-    "usage": "Take 2 capsules in the morning with food. Consistency matters more than timing.",
+    "usage": "Follow the serving on the manufacturer's label. Consistency matters more than timing.",
     "whoFor": "People who have tried single-ingredient nootropics and want one considered formula instead.",
     "faq": [
-      {
-        "q": "Does it contain caffeine?",
-        "a": "No. It is designed to be stimulant-free so you control your own caffeine separately."
-      },
-      {
-        "q": "Can I take it alongside the Energy & Focus Stack?",
-        "a": "Yes, on demanding days — but read both labels and count your total caffeine."
-      }
+      { "q": "Does it contain caffeine?", "a": "No — it is formulated stimulant-free, so you control your own caffeine separately." },
+      { "q": "Can I take it alongside the Gorilla Mind packs?", "a": "On demanding days, yes — but read both labels and count your total caffeine." }
     ]
   },
   {
-    "slug": "black-label",
+    "slug": "alpha-brain-black-label",
     "sku": "NTRP-ALPHA-BLACK",
     "tier": "TIER_100",
-    "name": "Black Label",
-    "subtitle": "Premium daily formula",
+    "brand": "Onnit",
+    "name": "Alpha BRAIN Black Label",
+    "subtitle": "Premium formulation",
     "category": "Premium Nootropic",
-    "tags": [
-      "bulk",
-      "premium"
-    ],
+    "tags": ["bulk", "premium"],
     "badge": "",
     "featured": false,
-    "amazon_price": 122.5,
+    "amazon_price": 122.50,
     "count": "60 capsules",
-    "servings": 30,
-    "servingSize": "2 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 50,
-    "colors": {
-      "base": "#14161A",
-      "tint": "#ECEAE6",
-      "cap": "#000000"
-    },
-    "tagline": "The upgraded formulation, priced accordingly.",
-    "shortDesc": "A higher-specification version of the daily formula, using premium raw materials and standardised extracts.",
+    "colors": { "base": "#14161A", "tint": "#ECEAE6", "cap": "#000000" },
+    "tagline": "Onnit's upgraded formulation, priced accordingly.",
+    "shortDesc": "The higher-specification version of Alpha BRAIN, using different raw materials and a reworked formula.",
     "longDesc": [
-      "Black Label is what the daily formula looks like without a cost ceiling: standardised extracts instead of raw powders, patented ingredient forms where they exist, and doses set by the research rather than by the margin.",
-      "It costs meaningfully more and it is not the right first purchase. Start on Focus Starter or the Universal Brain Formula, and move up only if the category is clearly doing something for you."
+      "Black Label is what Alpha BRAIN looks like without a cost ceiling. It is a genuinely different formulation rather than a bigger bottle of the same thing, and it costs roughly four times as much per capsule.",
+      "It is not the right first purchase, and we will say so on this page every time. Start on the 30-count Alpha BRAIN or Mind Lab Pro, and move up only if the category is clearly doing something for you."
     ],
-    "benefits": [
-      {
-        "title": "Standardised extracts",
-        "text": "Actives specified by extract standardisation rather than raw plant weight."
-      },
-      {
-        "title": "Research-led amounts",
-        "text": "Doses set to the levels used in published human trials where those exist."
-      },
-      {
-        "title": "Honest positioning",
-        "text": "This is an upgrade, not a starting point. We will tell you that on the product page every time."
-      }
+    "whyWeStockIt": [
+      { "title": "A real reformulation", "text": "Different actives and different raw material grades, not a relabelled version of the standard product." },
+      { "title": "For people who already know", "text": "Worth stocking for returning customers who respond to the category and want the upgrade." },
+      { "title": "Honest positioning", "text": "This is a step up, not a starting point, and the page says so before the buy button." }
     ],
-    "usage": "Take 2 capsules in the morning with food.",
+    "usage": "Follow the serving on the manufacturer's label.",
     "whoFor": "Returning customers who already know they respond to the category.",
     "faq": [
-      {
-        "q": "Is it worth the jump from the standard formula?",
-        "a": "Only if the standard formula already works for you. If you noticed nothing on a full month of the Universal Brain Formula, a more expensive version of the same category is unlikely to change that."
-      },
-      {
-        "q": "Can I alternate between the two?",
-        "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise."
-      }
+      { "q": "Is it worth the jump from standard Alpha BRAIN?", "a": "Only if the standard version already works for you. If you noticed nothing on a full bottle, a more expensive formula in the same category is unlikely to change that." },
+      { "q": "Can I alternate between the two?", "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise." }
     ]
   },
   {
-    "slug": "executive-function-blend",
+    "slug": "qualia-mind",
     "sku": "NTRP-QUALIA-MIND",
     "tier": "TIER_200",
-    "name": "Executive Function Blend",
-    "subtitle": "Comprehensive formula",
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "subtitle": "154 capsules",
     "category": "Premium Nootropic",
-    "tags": [
-      "bulk",
-      "premium"
-    ],
+    "tags": ["bulk", "premium"],
     "badge": "",
     "featured": false,
-    "amazon_price": 198.0,
+    "amazon_price": 198.00,
     "count": "154 capsules",
-    "servings": 22,
-    "servingSize": "7 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.2,
     "inventory": 25,
-    "colors": {
-      "base": "#0F6E86",
-      "tint": "#E6F1F4",
-      "cap": "#0A4F61"
-    },
+    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
     "tagline": "The comprehensive end of the shelf.",
-    "shortDesc": "A large multi-ingredient formula for people who want breadth in one product rather than a self-assembled stack.",
+    "shortDesc": "Neurohacker's flagship: a long, fully disclosed ingredient list at a large daily serving, for people who want breadth in one product.",
     "longDesc": [
-      "This is the widest formula we carry — a long ingredient list at a seven-capsule serving, aimed at people who would otherwise be buying eight separate bottles and taking them inconsistently.",
-      "Breadth has a cost, and not only in money: with this many actives, it is genuinely hard to attribute an effect to any single ingredient. If you want to know what works for you specifically, work up from the simpler formulas instead."
+      "Qualia Mind is the widest formula we carry — a long ingredient list at a multi-capsule serving, aimed at people who would otherwise be buying eight separate bottles and taking them inconsistently.",
+      "Breadth has a cost beyond the price. With this many actives it is genuinely hard to attribute an effect to any single ingredient, so if what you want is to learn what works for you specifically, work up from the simpler formulas instead."
     ],
-    "benefits": [
-      {
-        "title": "Breadth in one product",
-        "text": "Replaces a self-assembled multi-bottle stack with a single serving."
-      },
-      {
-        "title": "Full serving, not a token dose",
-        "text": "A seven-capsule serving because the ingredient list does not fit in two."
-      },
-      {
-        "title": "Straight talk on attribution",
-        "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise."
-      }
+    "whyWeStockIt": [
+      { "title": "Breadth in one product", "text": "Replaces a self-assembled multi-bottle stack with a single serving." },
+      { "title": "Full disclosure at this size", "text": "A long ingredient list with amounts printed, which is unusual for formulas this broad." },
+      { "title": "Straight talk on attribution", "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise." }
     ],
-    "usage": "Take 7 capsules in the morning on an empty stomach, or split across breakfast and mid-morning. Many people run five days on, two days off.",
-    "whoFor": "Experienced buyers who have already worked out that they respond, and want coverage rather than clarity.",
+    "usage": "Follow the serving and timing on the manufacturer's label — the serving is several capsules and many people split it.",
+    "whoFor": "Experienced buyers who already know they respond, and want coverage rather than clarity.",
     "faq": [
-      {
-        "q": "Seven capsules is a lot. Can I take fewer?",
-        "a": "You can take a partial serving, but then you are taking a partial dose of everything, including the ingredients that were the reason you bought it."
-      },
-      {
-        "q": "Should I cycle it?",
-        "a": "Five days on, two off is a common pattern with formulas this broad. It is convention rather than a documented requirement."
-      }
+      { "q": "That is a lot of capsules. Can I take fewer?", "a": "You can take a partial serving, but then you are taking a partial dose of everything, including whatever made you buy it." },
+      { "q": "Should I cycle it?", "a": "Cycling patterns are common with formulas this broad. Check the manufacturer's guidance on the label." }
     ]
   },
   {
-    "slug": "complete-day-night-stack",
+    "slug": "thrivous-day-night-stack",
     "sku": "NTRP-THRIVOUS-240",
     "tier": "TIER_300",
+    "brand": "Thrivous",
     "name": "Complete Day & Night Stack",
     "subtitle": "240 capsules",
     "category": "Daily Stack",
-    "tags": [
-      "bulk",
-      "bundle"
-    ],
+    "tags": ["bulk", "bundle"],
     "badge": "Best value per day",
     "featured": true,
     "amazon_price": 249.99,
     "count": "240 capsules",
-    "servings": 60,
-    "servingSize": "2 day + 2 night capsules",
-    "form": "Two bottles",
+    "servings": null,
+    "servingSize": "Per each product's label",
+    "form": "Two products",
     "weightKg": 0.5,
     "inventory": 25,
-    "colors": {
-      "base": "#1E4D3B",
-      "tint": "#EAF1ED",
-      "cap": "#153A2C"
-    },
-    "tagline": "Two months of the whole routine.",
-    "shortDesc": "A two-month supply of the day and night formulas together, at the lowest cost per day we offer.",
+    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "tagline": "An extended supply of the whole routine.",
+    "shortDesc": "Thrivous's day and night formulas together in a large supply, at the lowest cost per day on the shelf.",
     "longDesc": [
-      "Sixty days of both formulas. This is the size to buy once you already know the routine suits you, because two months in one purchase is only good value if you are going to finish it.",
-      "Cost per day is the lowest on the shelf. Cost per mistake, if the category turns out not to work for you, is the highest — which is why Focus Starter exists."
+      "This is the size to buy once you already know the routine suits you, because a large supply in one purchase is only good value if you are going to finish it.",
+      "Cost per day is the lowest we offer. Cost per mistake, if the category turns out not to work for you, is the highest — which is why the 30-count bottle exists."
     ],
-    "benefits": [
-      {
-        "title": "Lowest cost per day",
-        "text": "Two months of both formulas in a single purchase."
-      },
-      {
-        "title": "The full routine",
-        "text": "Day and night formulas together, matched to the same end date."
-      },
-      {
-        "title": "Fewer reorders",
-        "text": "One delivery every two months instead of four."
-      }
+    "whyWeStockIt": [
+      { "title": "Lowest cost per day", "text": "The best per-serving price on the shelf for people already committed." },
+      { "title": "Day and night together", "text": "Both formulas matched to the same supply period, so they run out together." },
+      { "title": "Fewer reorders", "text": "One delivery instead of several." }
     ],
-    "usage": "2 day capsules with breakfast, 2 night capsules 30–60 minutes before bed.",
+    "usage": "Follow each product's own label. The day and night formulas have different servings and different timings.",
     "whoFor": "Repeat customers who have finished at least one month and want to stop reordering so often.",
     "faq": [
-      {
-        "q": "Will it stay good for two months?",
-        "a": "Yes — check the printed expiry, which will be well beyond the supply period. Store both bottles somewhere cool and dry."
-      },
-      {
-        "q": "Is this a better deal than subscribing?",
-        "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription."
-      }
+      { "q": "Will it stay good that long?", "a": "Check the printed expiry on arrival, which should be well beyond the supply period. Store both bottles somewhere cool and dry." },
+      { "q": "Is this better value than subscribing?", "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription." }
     ]
   },
   {
-    "slug": "two-bottle-supply",
+    "slug": "qualia-mind-2-bottle",
     "sku": "NTRP-QUALIA-2PK",
     "tier": "TIER_500",
-    "name": "Executive 2-Bottle Supply",
-    "subtitle": "Extended supply bundle",
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "subtitle": "2-bottle supply",
     "category": "Bulk Bundle",
-    "tags": [
-      "wholesale",
-      "bundle"
-    ],
+    "tags": ["wholesale", "bundle"],
     "badge": "",
     "featured": false,
-    "amazon_price": 396.0,
+    "amazon_price": 396.00,
     "count": "2 bottles",
-    "servings": 44,
-    "servingSize": "7 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Two bottles",
     "weightKg": 0.5,
     "inventory": 15,
-    "colors": {
-      "base": "#0F6E86",
-      "tint": "#E6F1F4",
-      "cap": "#0A4F61"
-    },
-    "tagline": "Two bottles of the Executive Function Blend.",
-    "shortDesc": "An extended supply of the comprehensive formula for people who have settled on it and want to stop reordering.",
+    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
+    "tagline": "Two bottles of Qualia Mind, bought together.",
+    "shortDesc": "An extended supply for people who have settled on Qualia Mind and want to stop reordering.",
     "longDesc": [
-      "Two bottles of the Executive Function Blend, bought together. There is nothing clever about this SKU: it is the same product in a quantity that makes sense once you have decided.",
-      "Do not start here. Buy one bottle first, finish it, then decide whether the second one is worth $396 of shelf space."
+      "There is nothing clever about this listing: it is the same product in a quantity that makes sense once you have decided.",
+      "Do not start here. Buy one bottle, finish it, then decide whether the second is worth the shelf space."
     ],
-    "benefits": [
-      {
-        "title": "Roughly three months of supply",
-        "text": "Two bottles at the standard seven-capsule serving."
-      },
-      {
-        "title": "One decision, one delivery",
-        "text": "Fewer reorders, one renewal date."
-      },
-      {
-        "title": "Same formula",
-        "text": "Identical to the single bottle — no reformulation, no bulk-grade substitution."
-      }
+    "whyWeStockIt": [
+      { "title": "For people who have decided", "text": "Two sealed bottles at a better per-bottle price." },
+      { "title": "One delivery", "text": "Fewer reorders and one renewal date." },
+      { "title": "Identical product", "text": "The same formula as the single bottle — no bulk-grade substitution." }
     ],
-    "usage": "As per the single bottle: 7 capsules in the morning, or split across the morning.",
-    "whoFor": "Committed users of the Executive Function Blend.",
+    "usage": "As per the single bottle — follow the manufacturer's label.",
+    "whoFor": "Committed Qualia Mind users.",
     "faq": [
-      {
-        "q": "Can I split this with someone?",
-        "a": "Yes — they are two sealed bottles."
-      },
-      {
-        "q": "What is the return position on a bulk bundle?",
-        "a": "The same as everything else: 60 days, opened or unopened. See Shipping & Returns."
-      }
+      { "q": "Can I split this with someone?", "a": "Yes — they are two sealed bottles." },
+      { "q": "What is the return position on a bulk order?", "a": "The same as everything else: 60 days, opened or unopened." }
     ]
   },
   {
-    "slug": "four-bottle-supply",
+    "slug": "qualia-mind-4-bottle",
     "sku": "NTRP-QUALIA-4PK",
     "tier": "TIER_1000",
-    "name": "Ultimate 4-Bottle Supply",
-    "subtitle": "Long-supply bundle",
+    "brand": "Neurohacker Collective",
+    "name": "Qualia Mind",
+    "subtitle": "4-bottle supply",
     "category": "Bulk Bundle",
-    "tags": [
-      "wholesale",
-      "bundle"
-    ],
+    "tags": ["wholesale", "bundle"],
     "badge": "",
     "featured": false,
-    "amazon_price": 792.0,
+    "amazon_price": 792.00,
     "count": "4 bottles",
-    "servings": 88,
-    "servingSize": "7 capsules",
+    "servings": null,
+    "servingSize": "Per manufacturer's label",
     "form": "Four bottles",
     "weightKg": 1.0,
     "inventory": 10,
-    "colors": {
-      "base": "#7A6A4F",
-      "tint": "#F4F1EA",
-      "cap": "#5D5039"
-    },
+    "colors": { "base": "#7A6A4F", "tint": "#F4F1EA", "cap": "#5D5039" },
     "tagline": "The largest quantity we will sell you.",
-    "shortDesc": "Four bottles of the Executive Function Blend — roughly six months, for people who are certain.",
+    "shortDesc": "Four sealed bottles of Qualia Mind — a long supply, for people who are certain.",
     "longDesc": [
-      "This is the top of the range and the only honest thing to say about it is that most people should not buy it. Six months of anything is a bet on a version of yourself six months from now.",
+      "This is the top of the range and the only honest thing to say about it is that most people should not buy it. A long supply of anything is a bet on a version of yourself several months from now.",
       "If you are still here: four sealed bottles, same formula, one delivery, and the same 60-day return window as every other order."
     ],
-    "benefits": [
-      {
-        "title": "Roughly six months",
-        "text": "Four bottles at the standard serving."
-      },
-      {
-        "title": "Sealed bottles",
-        "text": "Opened one at a time, so the rest keep to their printed expiry."
-      },
-      {
-        "title": "The 60-day window still applies",
-        "text": "Buying big does not shorten your return rights."
-      }
+    "whyWeStockIt": [
+      { "title": "Best per-bottle price", "text": "The lowest unit price we can offer on this product." },
+      { "title": "Sealed bottles", "text": "Opened one at a time, so the rest keep to their printed expiry." },
+      { "title": "The 60-day window still applies", "text": "Buying big does not shorten your return rights." }
     ],
-    "usage": "As per the single bottle. Open one bottle at a time and keep the rest sealed and cool.",
-    "whoFor": "Long-term users who have already bought this formula more than once.",
+    "usage": "As per the single bottle. Open one at a time and keep the rest sealed and cool.",
+    "whoFor": "Long-term users who have already bought this product more than once.",
     "faq": [
-      {
-        "q": "Should I really buy six months at once?",
-        "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people."
-      },
-      {
-        "q": "Will all four bottles have the same expiry?",
-        "a": "They ship from the same lot wherever stock allows, so expiries will usually match. Check the printed dates on arrival."
-      }
+      { "q": "Should I really buy this much at once?", "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people." },
+      { "q": "Will all four bottles have the same expiry?", "a": "They ship from the same lot wherever stock allows, so expiries usually match. Check the printed dates on arrival." }
     ]
   }
 ]

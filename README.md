@@ -1,6 +1,7 @@
 # moddose.com
 
-Static storefront for **Moddose** — precision-dosed cognitive support supplements.
+Static storefront for **Moddose** — an independent retailer of third-party nootropic
+supplements (Onnit, Neurohacker Collective, Mind Lab Pro, Gorilla Mind, Thrivous).
 
 No framework, no build dependencies, no npm install. Plain HTML/CSS/JS plus a small
 Node build script that generates product pages and enforces the pricing rules.
@@ -106,11 +107,13 @@ Add an object to `data/products.json` and run `npm run build`. Required fields:
 |---|---|
 | `slug` | URL segment; becomes `/products/<slug>/` |
 | `sku`, `tier` | shown on the page and exported to the CSV |
-| `name`, `subtitle`, `category`, `tags` | `category` also drives the shop filter chips |
+| `brand` | the manufacturer — shown as the card eyebrow, the PDP kicker, and schema.org `brand` |
+| `name`, `subtitle`, `category`, `tags` | `category` drives the shop filter chips via `data-category` |
 | `amazon_price` | source price; snapped to the ladder at build time |
 | `count`, `servings`, `servingSize`, `form` | `form` picks the art: bottle, sachet, or 2/4-bottle |
 | `colors` | `{ base, tint, cap }` — used for the SVG and the card background |
 | `tagline`, `shortDesc`, `longDesc[]`, `benefits[]`, `usage`, `whoFor`, `faq[]` | page copy |
+| `whyWeStockIt[]` | retailer-voice reasons, rendered as the "Why we stock it" list |
 | `keyIngredients[]` | **optional** — see below |
 | `inventory`, `weightKg` | CSV export and stock badge |
 
@@ -118,11 +121,31 @@ A new `category` value needs a matching filter chip added to `shop/index.html`.
 
 ### Supplement facts
 
-`keyIngredients` is deliberately empty for every SKU. When it is empty the product page says
-the panel is on the label and offers to email the certificate of analysis; when populated it
-renders a facts table. **Fill these in from the actual product labels** — do not paraphrase
-them from marketing copy, because a wrong number on an ingredient panel is a labelling problem,
-not a copy problem.
+`keyIngredients` is deliberately empty for every SKU, and for a reseller that is probably the
+right permanent answer. When empty, the product page says the manufacturer's label is the
+authority and offers to send a photograph of the current one. If you ever populate it, copy
+the numbers from the physical label of stock you actually hold and re-check them whenever a
+manufacturer reformulates — a wrong number on an ingredient panel is a labelling problem, not
+a copy problem.
+
+### Retailer positioning
+
+The site sells other companies' products and the copy is written accordingly. Three things
+follow, and new copy has to keep them true:
+
+1. **No claim to manufacture or test.** Formulation, testing and labelling are the
+   manufacturer's. The site offers to *request* a certificate of analysis on the customer's
+   behalf, and to report back when a manufacturer declines — it never implies Moddose tested
+   anything.
+2. **Trademark notice in the footer**, on every page: brands are used to identify genuine
+   goods, with no implied affiliation or endorsement. Section 2 of the terms says the same at
+   length. This is what keeps brand-name use inside nominative fair use.
+3. **The label on the product is the authority**, not the site. Manufacturers reformulate
+   without telling retailers, so the copy defers to the physical label everywhere it matters.
+
+The generated placeholder art is deliberately blank — a silhouette with a capsule count and
+"PHOTO PENDING", no brand name and no invented label. Drawing a label for someone else's
+product would misrepresent what arrives in the box.
 
 ---
 
