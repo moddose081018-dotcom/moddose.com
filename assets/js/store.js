@@ -452,7 +452,7 @@
           window.location.assign(body.url);
         })
         .catch(function (err) {
-          fail(err.message + ' If this keeps happening, email ' + 'support@moddose.com' + '.');
+          fail(err.message + ' If this keeps happening, email ' + 'moddose@protonmail.com' + '.');
         });
     });
   }
