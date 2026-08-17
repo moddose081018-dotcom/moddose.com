@@ -68,6 +68,24 @@ const priceReport = products.map((p) => ({
   moved: Math.round((p.price - p.original_price) * 100) / 100
 }));
 
+
+const PHOTO_ALT = {
+  "alpha-brain": "Alpha BRAIN Onnit",
+  "gorilla-mind-energy-focus": "Energy & Focus Gorilla Mind",
+  "qualia-day-night-bundle": "Qualia Mind + Qualia Night Neurohacker Collective",
+  "mind-lab-pro": "Mind Lab Pro",
+  "qualia-mind": "Qualia Mind Neurohacker Collective",
+  "thrivous-day-night-stack": "Complete Day & Night Stack Thrivous",
+  "qualia-mind-2-bottle": "Qualia Mind Neurohacker Collective",
+  "qualia-mind-4-bottle": "Qualia Mind Neurohacker Collective",
+  "alpha-brain-black-label": "Alpha BRAIN Black Label Onnit"
+};
+
+function photoAlt(p) {
+  if (p.hasPhotos && PHOTO_ALT[p.slug]) return PHOTO_ALT[p.slug];
+  return `${p.name} — ${p.count}`;
+}
+
 /* ── 2. helpers ────────────────────────────────────────────── */
 
 const money = (n) => '$' + n.toFixed(2);
@@ -290,7 +308,7 @@ function card(p) {
   return `<article class="product-card" data-category="${esc(p.category)}" style="--pc-tint:${p.colors.tint}">
   ${badge}
   <a class="pc-media${p.hasPhotos ? ' has-photo' : ''}" href="${p.url}" aria-label="${esc(p.name)}">
-    <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}"${p.hasPhotos ? '' : ' width="160" height="240"'} loading="lazy">
+    <img src="${p.image}" alt="${esc(photoAlt(p))}"${p.hasPhotos ? '' : ' width="160" height="240"'} loading="lazy">
   </a>
   <div class="pc-body">
     <p class="pc-cat">${esc(p.brand)}</p>
@@ -318,7 +336,7 @@ function tierLadder() {
     .sort((a, b) => a.price - b.price)
     .map(
       (p) => `<tr>
-      <th scope="row"><a href="${p.url}">${esc(p.name)}</a><span class="t-brand">${esc(p.brand)}</span></th>
+      <th scope="row"><span class="t-prod"><img class="t-thumb" src="${p.image}" alt="${esc(photoAlt(p))}" width="40" height="40"><span class="t-prod-text"><a href="${p.url}">${esc(p.name)}</a><span class="t-brand">${esc(p.brand)}</span></span></span></th>
       <td style="text-align:left">${esc(p.count)}</td>
       <td style="text-align:left">${esc(p.category)}</td>
       <td style="text-align:right;font-variant-numeric:tabular-nums">${money(p.price)}</td>
@@ -427,7 +445,7 @@ ${p.keyIngredients
   <div class="pdp" data-buy-scope>
     <div class="pdp-media" data-gallery>
       <div class="pdp-figure${p.hasPhotos ? ' has-photo' : ''}" style="--pdp-tint:${p.colors.tint}">
-        <img src="${p.image}" alt="${esc(p.name)} — ${esc(p.count)}"${p.hasPhotos ? '' : ' width="260" height="390"'} data-gallery-main>
+        <img src="${p.image}" alt="${esc(photoAlt(p))}"${p.hasPhotos ? '' : ' width="260" height="390"'} data-gallery-main>
       </div>
       ${
         p.media.length > 1
