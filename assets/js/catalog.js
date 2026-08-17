@@ -11,7 +11,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "30 capsules",
     "servings": null,
-    "image": "/assets/img/alpha-brain.svg",
+    "image": "/assets/img/alpha-brain.jpg",
     "url": "/products/alpha-brain/"
   },
   {
@@ -25,7 +25,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "12 servings",
     "servings": 12,
-    "image": "/assets/img/gorilla-mind-energy-focus.svg",
+    "image": "/assets/img/gorilla-mind-energy-focus.jpg",
     "url": "/products/gorilla-mind-energy-focus/"
   },
   {
@@ -39,7 +39,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "2 products",
     "servings": null,
-    "image": "/assets/img/qualia-day-night-bundle.svg",
+    "image": "/assets/img/qualia-day-night-bundle.webp",
     "url": "/products/qualia-day-night-bundle/"
   },
   {
@@ -53,7 +53,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "60 capsules",
     "servings": null,
-    "image": "/assets/img/mind-lab-pro.svg",
+    "image": "/assets/img/mind-lab-pro.webp",
     "url": "/products/mind-lab-pro/"
   },
   {
@@ -67,7 +67,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "60 capsules",
     "servings": null,
-    "image": "/assets/img/alpha-brain-black-label.svg",
+    "image": "/assets/img/alpha-brain-black-label.jpg",
     "url": "/products/alpha-brain-black-label/"
   },
   {
@@ -81,7 +81,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "154 capsules",
     "servings": null,
-    "image": "/assets/img/qualia-mind.svg",
+    "image": "/assets/img/qualia-mind.jpg",
     "url": "/products/qualia-mind/"
   },
   {
@@ -95,7 +95,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "240 capsules",
     "servings": null,
-    "image": "/assets/img/thrivous-day-night-stack.svg",
+    "image": "/assets/img/thrivous-day-night-stack.jpg",
     "url": "/products/thrivous-day-night-stack/"
   },
   {
@@ -109,7 +109,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "2 bottles",
     "servings": null,
-    "image": "/assets/img/qualia-mind-2-bottle.svg",
+    "image": "/assets/img/qualia-mind-2-bottle.jpg",
     "url": "/products/qualia-mind-2-bottle/"
   },
   {
@@ -123,7 +123,7 @@ window.MODDOSE_CATALOG = [
     "compareAt": null,
     "count": "4 bottles",
     "servings": null,
-    "image": "/assets/img/qualia-mind-4-bottle.svg",
+    "image": "/assets/img/qualia-mind.jpg",
     "url": "/products/qualia-mind-4-bottle/"
   }
 ];
