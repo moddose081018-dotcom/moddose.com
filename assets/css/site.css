@@ -200,6 +200,7 @@ h1, h2, h3, .display {
   border: 1px solid var(--line); border-radius: var(--r-lg); padding: 36px;
   box-shadow: var(--shadow-md);
 }
+.hero-art .hero-figure img { display: block; margin: 0 auto; max-width: 100%; max-height: 390px; width: auto; height: auto; object-fit: contain; }
 .hero-badge {
   position: absolute; bottom: -18px; left: -18px; background: var(--surface);
   border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 18px;
@@ -521,13 +522,13 @@ body[data-page="contact"] .main-nav a[href="/contact/"] { color: var(--ink); fon
    Photos are square-cropped; generated SVG art keeps its own
    proportions on a tinted ground. Fixed frames prevent layout
    shift while images load. */
-.pc-media.has-photo { padding: 0; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
-.pc-media.has-photo img { width: 100%; height: 100%; object-fit: cover; max-height: none; }
+.pc-media.has-photo { padding: 16px; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); display: flex; align-items: center; justify-content: center; }
+.pc-media.has-photo img { width: 100%; height: 100%; object-fit: contain; max-height: none; }
 .product-card:hover .pc-media.has-photo img { transform: scale(1.02); }
 .pc-media.has-photo img { transition: transform .4s var(--ease); }
 
-.pdp-figure.has-photo { padding: 0; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); }
-.pdp-figure.has-photo img { width: 100%; height: 100%; object-fit: cover; max-height: none; }
+.pdp-figure.has-photo { padding: 24px; aspect-ratio: 1 / 1; overflow: hidden; background: var(--surface-2); display: flex; align-items: center; justify-content: center; }
+.pdp-figure.has-photo img { width: 100%; height: 100%; object-fit: contain; max-height: none; }
 
 .pdp-thumbs { display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap; }
 .pdp-thumb {
@@ -545,3 +546,7 @@ body[data-page="contact"] .main-nav a[href="/contact/"] { color: var(--ink); fon
 
 /* Positive variant of the checkout notice */
 .notice-ok { background: var(--forest-tint); border-color: var(--forest); }
+
+.t-prod { display: flex; align-items: center; gap: 10px; }
+.t-prod-text { min-width: 0; }
+.t-thumb { width: 40px; height: 40px; object-fit: contain; flex: none; background: var(--surface-2); border-radius: 4px; }
