@@ -7,7 +7,9 @@
     "name": "Alpha BRAIN",
     "subtitle": "30 capsules",
     "category": "Focus & Memory",
-    "tags": ["starter"],
+    "tags": [
+      "starter"
+    ],
     "badge": "Start here",
     "featured": true,
     "amazon_price": 29.98,
@@ -17,7 +19,11 @@
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "colors": {
+      "base": "#1E4D3B",
+      "tint": "#EAF1ED",
+      "cap": "#153A2C"
+    },
     "tagline": "The most recognisable name in the category, in its smallest size.",
     "shortDesc": "Onnit's flagship nootropic in the 30-count bottle — the cheapest honest way to find out whether this category does anything for you.",
     "longDesc": [
@@ -25,15 +31,33 @@
       "We stock it because Onnit publishes its ingredient list, has run its own human trials, and does not hide behind a single unlabelled blend total. Whether it works for you specifically is a separate question, and one a 30-count bottle answers cheaply."
     ],
     "whyWeStockIt": [
-      { "title": "The cheapest real trial", "text": "The 30-count bottle is enough to notice a pattern without committing to a month's spend." },
-      { "title": "A brand that publishes", "text": "Onnit lists its ingredients and has funded human research on the formula — rarer in this category than it should be." },
-      { "title": "Easy to send back", "text": "Our 60-day return policy applies to opened bottles, so a trial that goes nowhere costs you nothing." }
+      {
+        "title": "The cheapest real trial",
+        "text": "The 30-count bottle is enough to notice a pattern without committing to a month's spend."
+      },
+      {
+        "title": "A brand that publishes",
+        "text": "Onnit lists its ingredients and has funded human research on the formula — rarer in this category than it should be."
+      },
+      {
+        "title": "Easy to send back",
+        "text": "Our 60-day return policy applies to opened bottles, so a trial that goes nowhere costs you nothing."
+      }
     ],
     "usage": "Follow the serving on the manufacturer's label. Most people take it in the morning, with or without food.",
     "whoFor": "First-time buyers who want to test the category before spending real money.",
     "faq": [
-      { "q": "How long before I notice anything?", "a": "Response varies a lot between individuals and some people notice nothing at all. Give it the full bottle before deciding, and watch sleep and caffeine as confounders." },
-      { "q": "Is this the same product sold elsewhere?", "a": "Yes — genuine Onnit stock, in the manufacturer's sealed packaging, with the same label and lot coding you would get buying direct." }
+      {
+        "q": "How long before I notice anything?",
+        "a": "Response varies a lot between individuals and some people notice nothing at all. Give it the full bottle before deciding, and watch sleep and caffeine as confounders."
+      },
+      {
+        "q": "Is this the same product sold elsewhere?",
+        "a": "Yes — genuine Onnit stock, in the manufacturer's sealed packaging, with the same label and lot coding you would get buying direct."
+      }
+    ],
+    "photos": [
+      "/assets/img/alpha-brain.jpg"
     ]
   },
   {
@@ -44,7 +68,9 @@
     "name": "Energy & Focus",
     "subtitle": "12-pack",
     "category": "Energy & Focus",
-    "tags": ["mid-tier"],
+    "tags": [
+      "mid-tier"
+    ],
     "badge": "",
     "featured": true,
     "amazon_price": 49.95,
@@ -54,7 +80,11 @@
     "form": "Powder sachet",
     "weightKg": 0.5,
     "inventory": 100,
-    "colors": { "base": "#B23A48", "tint": "#F8EAEC", "cap": "#8C2A36" },
+    "colors": {
+      "base": "#B23A48",
+      "tint": "#F8EAEC",
+      "cap": "#8C2A36"
+    },
     "tagline": "Stimulant-forward, single-serve, and deliberately not a daily.",
     "shortDesc": "Gorilla Mind's energy and focus formula in single-serve packs — built for demanding days rather than everyday use.",
     "longDesc": [
@@ -62,15 +92,33 @@
       "Twelve servings is not a shortcoming. If you are finishing a box a week, the problem is your sleep, not your supplement, and nothing on this site will fix that."
     ],
     "whyWeStockIt": [
-      { "title": "Fixed doses", "text": "Single-serve packs mean no scoop, no guessing, and no dose that creeps upward over a month." },
-      { "title": "Honest about what it is", "text": "Gorilla Mind does not market this as a gentle daily. Neither do we." },
-      { "title": "Travels flat", "text": "Packs fit a laptop sleeve, a glovebox or a jacket pocket." }
+      {
+        "title": "Fixed doses",
+        "text": "Single-serve packs mean no scoop, no guessing, and no dose that creeps upward over a month."
+      },
+      {
+        "title": "Honest about what it is",
+        "text": "Gorilla Mind does not market this as a gentle daily. Neither do we."
+      },
+      {
+        "title": "Travels flat",
+        "text": "Packs fit a laptop sleeve, a glovebox or a jacket pocket."
+      }
     ],
     "usage": "Mix one pack into water per the manufacturer's label. Avoid within six hours of bedtime, and count its caffeine against your daily total.",
     "whoFor": "People with occasional high-demand days who do not want a daily stimulant habit.",
     "faq": [
-      { "q": "Can I take this every day?", "a": "We would not. Stimulant tolerance builds quickly, and the value of a formula like this depends on it staying occasional." },
-      { "q": "How much caffeine is in it?", "a": "Check the current label — the amount is printed on the pack, and it counts against your daily total including coffee." }
+      {
+        "q": "Can I take this every day?",
+        "a": "We would not. Stimulant tolerance builds quickly, and the value of a formula like this depends on it staying occasional."
+      },
+      {
+        "q": "How much caffeine is in it?",
+        "a": "Check the current label — the amount is printed on the pack, and it counts against your daily total including coffee."
+      }
+    ],
+    "photos": [
+      "/assets/img/gorilla-mind-energy-focus.jpg"
     ]
   },
   {
@@ -81,17 +129,24 @@
     "name": "Qualia Mind + Qualia Night",
     "subtitle": "Day and night bundle",
     "category": "Cognitive Support",
-    "tags": ["mid-tier", "bundle"],
+    "tags": [
+      "mid-tier",
+      "bundle"
+    ],
     "badge": "Both ends of the day",
     "featured": true,
-    "amazon_price": 69.00,
+    "amazon_price": 69.0,
     "count": "2 products",
     "servings": null,
     "servingSize": "Per each product's label",
     "form": "Two products",
     "weightKg": 0.2,
     "inventory": 50,
-    "colors": { "base": "#2B3A67", "tint": "#EAEDF4", "cap": "#1F2B4D" },
+    "colors": {
+      "base": "#2B3A67",
+      "tint": "#EAEDF4",
+      "cap": "#1F2B4D"
+    },
     "tagline": "Focus is downstream of sleep.",
     "shortDesc": "Neurohacker's daytime and evening formulas bought together — because for most people the focus problem starts the night before.",
     "longDesc": [
@@ -99,15 +154,33 @@
       "This bundle is the reason we carry Neurohacker at all: they make both halves, designed to be taken together, and selling them as a pair is more honest than selling the daytime one alone to someone who is not sleeping."
     ],
     "whyWeStockIt": [
-      { "title": "Addresses the actual loop", "text": "Daytime and evening formulas from the same maker, intended to be used together." },
-      { "title": "Nothing habit-forming at night", "text": "The evening formula contains no prescription sleep agents." },
-      { "title": "Cheaper as a pair", "text": "Bundled below the sum of the two bought separately." }
+      {
+        "title": "Addresses the actual loop",
+        "text": "Daytime and evening formulas from the same maker, intended to be used together."
+      },
+      {
+        "title": "Nothing habit-forming at night",
+        "text": "The evening formula contains no prescription sleep agents."
+      },
+      {
+        "title": "Cheaper as a pair",
+        "text": "Bundled below the sum of the two bought separately."
+      }
     ],
     "usage": "Follow each product's own label — they have different serving sizes and different timings.",
     "whoFor": "Anyone whose focus problem starts at 11pm the night before.",
     "faq": [
-      { "q": "Can I buy the halves separately?", "a": "Qualia Mind on its own is stocked in the larger sizes. The evening formula is currently bundle-only here." },
-      { "q": "Will the night formula make me groggy?", "a": "It is not intended to be sedating, but individual response varies. Try it first on a night without an early start." }
+      {
+        "q": "Can I buy the halves separately?",
+        "a": "Qualia Mind on its own is stocked in the larger sizes. The evening formula is currently bundle-only here."
+      },
+      {
+        "q": "Will the night formula make me groggy?",
+        "a": "It is not intended to be sedating, but individual response varies. Try it first on a night without an early start."
+      }
+    ],
+    "photos": [
+      "/assets/img/qualia-day-night-bundle.webp"
     ]
   },
   {
@@ -118,7 +191,9 @@
     "name": "Mind Lab Pro",
     "subtitle": "Universal Nootropic · 60 capsules",
     "category": "Universal Brain Support",
-    "tags": ["bulk-entry"],
+    "tags": [
+      "bulk-entry"
+    ],
     "badge": "Most popular",
     "featured": true,
     "amazon_price": 79.99,
@@ -128,7 +203,11 @@
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 100,
-    "colors": { "base": "#5B4B8A", "tint": "#EEEBF5", "cap": "#453868" },
+    "colors": {
+      "base": "#5B4B8A",
+      "tint": "#EEEBF5",
+      "cap": "#453868"
+    },
     "tagline": "One bottle, one month, no stack to manage.",
     "shortDesc": "A single broad-spectrum, stimulant-free daily formula for people who want one bottle on the shelf instead of six.",
     "longDesc": [
@@ -136,15 +215,33 @@
       "Mind Lab Pro is the one we point most people at for that job: stimulant-free, so it does not fight with your coffee, and fully disclosed — every ingredient amount is printed rather than buried in a blend total. That disclosure is the reason it is on this shelf."
     ],
     "whyWeStockIt": [
-      { "title": "Fully disclosed doses", "text": "Every ingredient amount printed on the label, with no proprietary blend hiding the numbers." },
-      { "title": "Stimulant-free", "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening." },
-      { "title": "One bottle instead of six", "text": "A single broad formula rather than a stack you have to manage." }
+      {
+        "title": "Fully disclosed doses",
+        "text": "Every ingredient amount printed on the label, with no proprietary blend hiding the numbers."
+      },
+      {
+        "title": "Stimulant-free",
+        "text": "No added caffeine, so it does not interfere with your existing coffee habit or your evening."
+      },
+      {
+        "title": "One bottle instead of six",
+        "text": "A single broad formula rather than a stack you have to manage."
+      }
     ],
     "usage": "Follow the serving on the manufacturer's label. Consistency matters more than timing.",
     "whoFor": "People who have tried single-ingredient nootropics and want one considered formula instead.",
     "faq": [
-      { "q": "Does it contain caffeine?", "a": "No — it is formulated stimulant-free, so you control your own caffeine separately." },
-      { "q": "Can I take it alongside the Gorilla Mind packs?", "a": "On demanding days, yes — but read both labels and count your total caffeine." }
+      {
+        "q": "Does it contain caffeine?",
+        "a": "No — it is formulated stimulant-free, so you control your own caffeine separately."
+      },
+      {
+        "q": "Can I take it alongside the Gorilla Mind packs?",
+        "a": "On demanding days, yes — but read both labels and count your total caffeine."
+      }
+    ],
+    "photos": [
+      "/assets/img/mind-lab-pro.webp"
     ]
   },
   {
@@ -155,17 +252,24 @@
     "name": "Alpha BRAIN Black Label",
     "subtitle": "Premium formulation",
     "category": "Premium Nootropic",
-    "tags": ["bulk", "premium"],
+    "tags": [
+      "bulk",
+      "premium"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 122.50,
+    "amazon_price": 122.5,
     "count": "60 capsules",
     "servings": null,
     "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.1,
     "inventory": 50,
-    "colors": { "base": "#14161A", "tint": "#ECEAE6", "cap": "#000000" },
+    "colors": {
+      "base": "#14161A",
+      "tint": "#ECEAE6",
+      "cap": "#000000"
+    },
     "tagline": "Onnit's upgraded formulation, priced accordingly.",
     "shortDesc": "The higher-specification version of Alpha BRAIN, using different raw materials and a reworked formula.",
     "longDesc": [
@@ -173,15 +277,33 @@
       "It is not the right first purchase, and we will say so on this page every time. Start on the 30-count Alpha BRAIN or Mind Lab Pro, and move up only if the category is clearly doing something for you."
     ],
     "whyWeStockIt": [
-      { "title": "A real reformulation", "text": "Different actives and different raw material grades, not a relabelled version of the standard product." },
-      { "title": "For people who already know", "text": "Worth stocking for returning customers who respond to the category and want the upgrade." },
-      { "title": "Honest positioning", "text": "This is a step up, not a starting point, and the page says so before the buy button." }
+      {
+        "title": "A real reformulation",
+        "text": "Different actives and different raw material grades, not a relabelled version of the standard product."
+      },
+      {
+        "title": "For people who already know",
+        "text": "Worth stocking for returning customers who respond to the category and want the upgrade."
+      },
+      {
+        "title": "Honest positioning",
+        "text": "This is a step up, not a starting point, and the page says so before the buy button."
+      }
     ],
     "usage": "Follow the serving on the manufacturer's label.",
     "whoFor": "Returning customers who already know they respond to the category.",
     "faq": [
-      { "q": "Is it worth the jump from standard Alpha BRAIN?", "a": "Only if the standard version already works for you. If you noticed nothing on a full bottle, a more expensive formula in the same category is unlikely to change that." },
-      { "q": "Can I alternate between the two?", "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise." }
+      {
+        "q": "Is it worth the jump from standard Alpha BRAIN?",
+        "a": "Only if the standard version already works for you. If you noticed nothing on a full bottle, a more expensive formula in the same category is unlikely to change that."
+      },
+      {
+        "q": "Can I alternate between the two?",
+        "a": "Yes. Some people run Black Label on heavy weeks and the standard formula otherwise."
+      }
+    ],
+    "photos": [
+      "/assets/img/alpha-brain-black-label.jpg"
     ]
   },
   {
@@ -192,17 +314,24 @@
     "name": "Qualia Mind",
     "subtitle": "154 capsules",
     "category": "Premium Nootropic",
-    "tags": ["bulk", "premium"],
+    "tags": [
+      "bulk",
+      "premium"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 198.00,
+    "amazon_price": 198.0,
     "count": "154 capsules",
     "servings": null,
     "servingSize": "Per manufacturer's label",
     "form": "Capsule",
     "weightKg": 0.2,
     "inventory": 25,
-    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
+    "colors": {
+      "base": "#0F6E86",
+      "tint": "#E6F1F4",
+      "cap": "#0A4F61"
+    },
     "tagline": "The comprehensive end of the shelf.",
     "shortDesc": "Neurohacker's flagship: a long, fully disclosed ingredient list at a large daily serving, for people who want breadth in one product.",
     "longDesc": [
@@ -210,15 +339,33 @@
       "Breadth has a cost beyond the price. With this many actives it is genuinely hard to attribute an effect to any single ingredient, so if what you want is to learn what works for you specifically, work up from the simpler formulas instead."
     ],
     "whyWeStockIt": [
-      { "title": "Breadth in one product", "text": "Replaces a self-assembled multi-bottle stack with a single serving." },
-      { "title": "Full disclosure at this size", "text": "A long ingredient list with amounts printed, which is unusual for formulas this broad." },
-      { "title": "Straight talk on attribution", "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise." }
+      {
+        "title": "Breadth in one product",
+        "text": "Replaces a self-assembled multi-bottle stack with a single serving."
+      },
+      {
+        "title": "Full disclosure at this size",
+        "text": "A long ingredient list with amounts printed, which is unusual for formulas this broad."
+      },
+      {
+        "title": "Straight talk on attribution",
+        "text": "With this many actives you will not learn which one matters. We would rather say so than pretend otherwise."
+      }
     ],
     "usage": "Follow the serving and timing on the manufacturer's label — the serving is several capsules and many people split it.",
     "whoFor": "Experienced buyers who already know they respond, and want coverage rather than clarity.",
     "faq": [
-      { "q": "That is a lot of capsules. Can I take fewer?", "a": "You can take a partial serving, but then you are taking a partial dose of everything, including whatever made you buy it." },
-      { "q": "Should I cycle it?", "a": "Cycling patterns are common with formulas this broad. Check the manufacturer's guidance on the label." }
+      {
+        "q": "That is a lot of capsules. Can I take fewer?",
+        "a": "You can take a partial serving, but then you are taking a partial dose of everything, including whatever made you buy it."
+      },
+      {
+        "q": "Should I cycle it?",
+        "a": "Cycling patterns are common with formulas this broad. Check the manufacturer's guidance on the label."
+      }
+    ],
+    "photos": [
+      "/assets/img/qualia-mind.jpg"
     ]
   },
   {
@@ -229,7 +376,10 @@
     "name": "Complete Day & Night Stack",
     "subtitle": "240 capsules",
     "category": "Daily Stack",
-    "tags": ["bulk", "bundle"],
+    "tags": [
+      "bulk",
+      "bundle"
+    ],
     "badge": "Best value per day",
     "featured": true,
     "amazon_price": 249.99,
@@ -239,7 +389,11 @@
     "form": "Two products",
     "weightKg": 0.5,
     "inventory": 25,
-    "colors": { "base": "#1E4D3B", "tint": "#EAF1ED", "cap": "#153A2C" },
+    "colors": {
+      "base": "#1E4D3B",
+      "tint": "#EAF1ED",
+      "cap": "#153A2C"
+    },
     "tagline": "An extended supply of the whole routine.",
     "shortDesc": "Thrivous's day and night formulas together in a large supply, at the lowest cost per day on the shelf.",
     "longDesc": [
@@ -247,15 +401,33 @@
       "Cost per day is the lowest we offer. Cost per mistake, if the category turns out not to work for you, is the highest — which is why the 30-count bottle exists."
     ],
     "whyWeStockIt": [
-      { "title": "Lowest cost per day", "text": "The best per-serving price on the shelf for people already committed." },
-      { "title": "Day and night together", "text": "Both formulas matched to the same supply period, so they run out together." },
-      { "title": "Fewer reorders", "text": "One delivery instead of several." }
+      {
+        "title": "Lowest cost per day",
+        "text": "The best per-serving price on the shelf for people already committed."
+      },
+      {
+        "title": "Day and night together",
+        "text": "Both formulas matched to the same supply period, so they run out together."
+      },
+      {
+        "title": "Fewer reorders",
+        "text": "One delivery instead of several."
+      }
     ],
     "usage": "Follow each product's own label. The day and night formulas have different servings and different timings.",
     "whoFor": "Repeat customers who have finished at least one month and want to stop reordering so often.",
     "faq": [
-      { "q": "Will it stay good that long?", "a": "Check the printed expiry on arrival, which should be well beyond the supply period. Store both bottles somewhere cool and dry." },
-      { "q": "Is this better value than subscribing?", "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription." }
+      {
+        "q": "Will it stay good that long?",
+        "a": "Check the printed expiry on arrival, which should be well beyond the supply period. Store both bottles somewhere cool and dry."
+      },
+      {
+        "q": "Is this better value than subscribing?",
+        "a": "Subscribe & Save applies on top, so the cheapest per-day option is this size on subscription."
+      }
+    ],
+    "photos": [
+      "/assets/img/thrivous-day-night-stack.jpg"
     ]
   },
   {
@@ -266,17 +438,24 @@
     "name": "Qualia Mind",
     "subtitle": "2-bottle supply",
     "category": "Bulk Bundle",
-    "tags": ["wholesale", "bundle"],
+    "tags": [
+      "wholesale",
+      "bundle"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 396.00,
+    "amazon_price": 396.0,
     "count": "2 bottles",
     "servings": null,
     "servingSize": "Per manufacturer's label",
     "form": "Two bottles",
     "weightKg": 0.5,
     "inventory": 15,
-    "colors": { "base": "#0F6E86", "tint": "#E6F1F4", "cap": "#0A4F61" },
+    "colors": {
+      "base": "#0F6E86",
+      "tint": "#E6F1F4",
+      "cap": "#0A4F61"
+    },
     "tagline": "Two bottles of Qualia Mind, bought together.",
     "shortDesc": "An extended supply for people who have settled on Qualia Mind and want to stop reordering.",
     "longDesc": [
@@ -284,15 +463,33 @@
       "Do not start here. Buy one bottle, finish it, then decide whether the second is worth the shelf space."
     ],
     "whyWeStockIt": [
-      { "title": "For people who have decided", "text": "Two sealed bottles at a better per-bottle price." },
-      { "title": "One delivery", "text": "Fewer reorders and one renewal date." },
-      { "title": "Identical product", "text": "The same formula as the single bottle — no bulk-grade substitution." }
+      {
+        "title": "For people who have decided",
+        "text": "Two sealed bottles at a better per-bottle price."
+      },
+      {
+        "title": "One delivery",
+        "text": "Fewer reorders and one renewal date."
+      },
+      {
+        "title": "Identical product",
+        "text": "The same formula as the single bottle — no bulk-grade substitution."
+      }
     ],
     "usage": "As per the single bottle — follow the manufacturer's label.",
     "whoFor": "Committed Qualia Mind users.",
     "faq": [
-      { "q": "Can I split this with someone?", "a": "Yes — they are two sealed bottles." },
-      { "q": "What is the return position on a bulk order?", "a": "The same as everything else: 60 days, opened or unopened." }
+      {
+        "q": "Can I split this with someone?",
+        "a": "Yes — they are two sealed bottles."
+      },
+      {
+        "q": "What is the return position on a bulk order?",
+        "a": "The same as everything else: 60 days, opened or unopened."
+      }
+    ],
+    "photos": [
+      "/assets/img/qualia-mind-2-bottle.jpg"
     ]
   },
   {
@@ -303,17 +500,24 @@
     "name": "Qualia Mind",
     "subtitle": "4-bottle supply",
     "category": "Bulk Bundle",
-    "tags": ["wholesale", "bundle"],
+    "tags": [
+      "wholesale",
+      "bundle"
+    ],
     "badge": "",
     "featured": false,
-    "amazon_price": 792.00,
+    "amazon_price": 792.0,
     "count": "4 bottles",
     "servings": null,
     "servingSize": "Per manufacturer's label",
     "form": "Four bottles",
     "weightKg": 1.0,
     "inventory": 10,
-    "colors": { "base": "#7A6A4F", "tint": "#F4F1EA", "cap": "#5D5039" },
+    "colors": {
+      "base": "#7A6A4F",
+      "tint": "#F4F1EA",
+      "cap": "#5D5039"
+    },
     "tagline": "The largest quantity we will sell you.",
     "shortDesc": "Four sealed bottles of Qualia Mind — a long supply, for people who are certain.",
     "longDesc": [
@@ -321,15 +525,33 @@
       "If you are still here: four sealed bottles, same formula, one delivery, and the same 60-day return window as every other order."
     ],
     "whyWeStockIt": [
-      { "title": "Best per-bottle price", "text": "The lowest unit price we can offer on this product." },
-      { "title": "Sealed bottles", "text": "Opened one at a time, so the rest keep to their printed expiry." },
-      { "title": "The 60-day window still applies", "text": "Buying big does not shorten your return rights." }
+      {
+        "title": "Best per-bottle price",
+        "text": "The lowest unit price we can offer on this product."
+      },
+      {
+        "title": "Sealed bottles",
+        "text": "Opened one at a time, so the rest keep to their printed expiry."
+      },
+      {
+        "title": "The 60-day window still applies",
+        "text": "Buying big does not shorten your return rights."
+      }
     ],
     "usage": "As per the single bottle. Open one at a time and keep the rest sealed and cool.",
     "whoFor": "Long-term users who have already bought this product more than once.",
     "faq": [
-      { "q": "Should I really buy this much at once?", "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people." },
-      { "q": "Will all four bottles have the same expiry?", "a": "They ship from the same lot wherever stock allows, so expiries usually match. Check the printed dates on arrival." }
+      {
+        "q": "Should I really buy this much at once?",
+        "a": "Probably not, unless you have already finished several bottles. The 2-bottle supply is the sensible ceiling for most people."
+      },
+      {
+        "q": "Will all four bottles have the same expiry?",
+        "a": "They ship from the same lot wherever stock allows, so expiries usually match. Check the printed dates on arrival."
+      }
+    ],
+    "photos": [
+      "/assets/img/qualia-mind.jpg"
     ]
   }
 ]
